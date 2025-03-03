@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZippyBites</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="">
+
+    <!-- Header -->
+    <header class="h-12 w-full bg-gray-100">
+        <div class="flex justify-between items-center h-full container   mx-auto  px-20">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center pe-5">
+                    <ion-icon name="mail"></ion-icon>
+                    <div class="font-normal ms-1 text-[14px]">hello@colorlib.com</div>
+                </div>
+                <div class="h-6 bg-gray-300 w-[2px] rounded-full"></div>
+                <div class="ps-5 font-normal text-[14px]">Free Shipping for all Order of $99</div>
+            </div>
+            <div class="flex items-center">
+                <div class="flex items-center px-5 gap-2 cursor-pointer relative">
+                    <div><img src="./img/language.png" alt="" srcset=""></div>
+                    <div class="font-normal ms-1 text-[14px]">English</div>
+                    <ion-icon class="text-[13px]" name="chevron-down-outline"></ion-icon>
+                    <div
+                        class="bg-gray-200 p-2 rounded-sm absolute bottom-[-100px] z-20 right-0 w-full justify-center flex flex-col items-center">
+                        <p class="font-normal text-[14px] py-3">English</p>
+                        <p class="font-normal text-[14px] py-3">Tamil</p>
+                    </div>
+                </div>
+                <div class="h-6 bg-gray-300 w-[2px] rounded-full"></div>
+                <div class="flex items-center px-5 cursor-pointer">
+                    <ion-icon name="person"></ion-icon>
+                    <p class="font-normal ms-1 text-[14px]">Login</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container px-20 mx-auto">
+        <!-- Menu Section  -->
+        <div class="h-20 flex justify-between items-center">
+            <div class="h-30 w-30 overflow-hidden"><img class="h-full w-full object-contain" src="./img/logo.png" alt=""
+                    srcset="">
+            </div>
+            <ul class="flex gap-10">
+                <li class="menu_btn font-bold text-balance uppercase text-[#7fad39]"><a href="#">Home</a>
+                </li>
+                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Shop</a></li>
+                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Pages</a></li>
+                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Blog</a></li>
+                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Contact</a></li>
+            </ul>
+            <div class="flex gap-8 items-center">
+                <div class="relative">
+                    <ion-icon class="text-2xl" name="heart"></ion-icon>
+                    <div
+                        class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                        5
+                    </div>
+                </div>
+                <div class="relative">
+                    <ion-icon class="text-2xl ms-3" name="bag-handle"></ion-icon>
+                    <div
+                        class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                        5 </div>
+                </div>
+
+                <div class="flex">
+                    <p>item:</p>
+                    <p class="font-bold ms-1">₹350</p>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Section  -->
+        <main class="flex w-full gap-5">
+            <div class="w-3/12 h-full">
+                <div class="overflow-hidden h-full duration-700 ">
+                    <div id="CategorieMenu"
+                        class="flex items-center justify-around bg-[#7fad39] hover:opacity-75 duration-500 cursor-pointer text-white font-bold text-lg px-5 h-12">
+                        <ion-icon class="text-2xl" name="menu"></ion-icon>
+                        <p>All departments</p>
+                        <ion-icon class="text-xl" name="chevron-down"></ion-icon>
+                    </div>
+                    <div id="CaterieItems" class=" duration-1000 max-h-0">
+                        <ul class="border-[1px] border-gray-300 py-3 ">
+                            <li class="px-6 py-2">Fresh Meat</li>
+                            <li class="px-6 py-2">Vegetables</li>
+                            <li class="px-6 py-2">Fruit & Nut Gifts</li>
+                            <li class="px-6 py-2">Fresh Berries</li>
+                            <li class="px-6 py-2">Ocean Foods</li>
+                            <li class="px-6 py-2">Butter & Eggs</li>
+                            <li class="px-6 py-2">Fastfood</li>
+                            <li class="px-6 py-2">Fresh Onion</li>
+                            <li class="px-6 py-2">Papayaya & Crisps</li>
+                            <li class="px-6 py-2">Oatmeal</li>
+                            <li class="px-6 py-2">Fresh Bananas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-9/12">
+                <div class="flex h-12 justify-between ">
+                    <div class="flex items-center w-8/12 border-[1px] border-gray-300">
+                        <input type="text" class="w-9/12 outline-0 h-full ps-5" placeholder="What do you need?">
+                        <button
+                            class="w-3/12 hover:opacity-75 duration-500 bg-[#7fad39] text-white font-bold text-balance uppercase h-full">Search</button>
+                    </div>
+                    <div class="flex gap-5">
+                        <div
+                            class="h-12 w-12 rounded-full animate-bounce bg-gray-100  flex justify-center items-center">
+                            <ion-icon id="phone_animation" class="text-[#7fad39]" name="call-sharp"></ion-icon>
+                        </div>
+                        <div class="justify-center items-center flex flex-col">
+                            <p class="font-bold">+91 8489260109</p>
+                            <p class="font-light text-[14px]">support 24/7 time</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[75vh] py-10 ">
+                    <div class="bg-image  w-full h-full bg-gray-300">
+                        <div class="w-full ps-20 flex flex-col items-start justify-center h-full">
+                            <p class="text-[#7fad39] font-bold">FRUIT FRESH</p>
+                            <p class="font-extrabold text-5xl mt-3 mb-3">Vegetable</p>
+                            <p class="font-extrabold text-5xl mb-4"> 100% Organic</p>
+                            <p class="font-normal text-gray-500">Free Pickup and Delivery Available</p>
+                            <button
+                                class="bg-[#7fad39] duration-500 hover:opacity-75 text-white font-bold py-2 px-5 mt-10">Shop
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section id="product_container" class="product_containe w-full mb-20 relative">
+            <div class="product_slider grid grid-flow-col auto-cols-[calc((100%/4))] auto-rows-[300px] "
+                id="product_slider">
+                <div class="product_item ">
+                    <div class="item-1 flex items-end justify-center py-4">
+                        <p class="py-1 bg-white w-5/6 uppercase font-bold text-xl text-center">Fresh Fruit</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="item-2 flex items-end justify-center py-4">
+                        <p class="py-1 bg-white w-5/6 uppercase font-bold text-xl text-center">Fresh Fruit</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="item-3 flex items-end justify-center py-4">
+                        <p class="py-1 bg-white w-5/6 uppercase font-bold text-xl text-center">Fresh Fruit</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="item-4 flex items-end justify-center py-4">
+                        <p class="py-1 bg-white w-5/6 uppercase font-bold text-xl text-center">Fresh Fruit</p>
+                    </div>
+                </div>
+                <div class="product_item">
+                    <div class="item-5 flex items-end justify-center py-4">
+                        <p class="py-1 bg-white w-5/6 uppercase font-bold text-xl text-center">Fresh Fruit</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Absolute positioned navigation -->
+            <div
+                class="absolute z-30 left-0 top-0  w-full h-full flex justify-between items-center pointer-events-none">
+                <ion-icon id="next" name="caret-back-outline"
+                    class=" text-3xl absolute top-1/2 -translate-y-1/2 left-[-3%] bg-gray-200 p-2 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+                <ion-icon id="prv" name="caret-forward-outline"
+                    class=" text-3xl absolute top-1/2 -translate-y-1/2 right-[-5%] bg-gray-200 p-2 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+            </div>
+        </section>
+        <!-- Featured Product Section  -->
+        <section>
+            <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
+                <h1 class="text-center font-extrabold text-4xl">Featured Product</h1>
+                <div class="w-25 h-1 bg-[#7fad39] mt-3"></div>
+            </div>
+            <div id="featured_product_list" class="flex justify-center gap-5 mb-10">
+                <p class="font-normal text-gray-500 text-lg cursor-pointer border-b-2 border-[#7fad39]">All</p>
+                <p class="font-normal text-gray-500 text-lg cursor-pointer">Oranges</p>
+                <p class="font-normal text-gray-500 text-lg cursor-pointer">Fresh Meat</p>
+                <p class="font-normal text-gray-500 text-lg cursor-pointer">Vegetables</p>
+                <p class="font-normal text-gray-500 text-lg cursor-pointer">Fastfood</p>
+            </div>
+            <div class=" grid gap-x-7 gap-y-14 grid-cols-4 grid-rows-[repeat(2,350px)] mb-20  ">
+
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-1.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-2.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-3.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-4.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-5.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-6.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-7.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+                <div id="featured_product_item">
+                    <div class="h-9/12 relative overflow-hidden">
+                        <img src="./img/featured/feature-8.jpg" class="h-full w-full" alt="">
+                        <div
+                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="heart"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="sync"></ion-icon>
+                            <ion-icon
+                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                name="cart"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center flex-col h-3/12">
+                        <p>Crab Pool Security</p>
+                        <p class="font-extrabold">$30.00</p>
+                    </div>
+                </div>
+
+        </section>
+        <!-- banner section  -->
+        <section id="banner_section" class="flex h-[250px] w-full gap-10 mb-20">
+            <div class="w-6/12 h-full"></div>
+            <div class="w-6/12 h-full"></div>
+        </section>
+
+        <!-- latest & top rated & review product  -->
+        <section class="mb-20 flex gap-10">
+            <div class="w-4/12">
+                <div class="flex justify-between items-center">
+                    <h1 class="font-extrabold text-2xl">Latest Products</h1>
+                    <div>
+                        <ion-icon class="bg-gray-300 text-lg rounded-sm px-2 py-2" name="chevron-back"></ion-icon>
+                        <ion-icon class="bg-gray-300 text-lg rounded-sm px-2 py-2" name="chevron-forward"></ion-icon>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full mt-10 grid grid-flow-col grid-rows-3 auto-cols-[calc((100%/1))] overflow-hidden gap-5">
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-1.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-2.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-3.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-4.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-5.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-6.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="w-4/12">
+                <div class="flex justify-between items-center">
+                    <h1 class="font-extrabold text-2xl">Top Rated Products</h1>
+                    <div>
+                        <ion-icon class="bg-gray-300 text-lg rounded-sm px-2 py-2" name="chevron-back"></ion-icon>
+                        <ion-icon class="bg-gray-300 text-lg rounded-sm px-2 py-2" name="chevron-forward"></ion-icon>
+                    </div>
+                </div>
+                <div
+                    class="w-full mt-10 grid grid-flow-col grid-rows-3 auto-cols-[calc((100%/1))] overflow-hidden gap-5">
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-1.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-2.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-3.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-4.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-5.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-6.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="w-4/12">
+                <div class="flex justify-between items-center">
+                    <h1 class="font-extrabold text-2xl">Review Products</h1>
+                    <div>
+                        <ion-icon class="bg-gray-300 text-lg rounded-sm px-2 py-2" name="chevron-back"></ion-icon>
+                        <ion-icon class="bg-gray-300 text-lg rounded-sm px-2 py-2" name="chevron-forward"></ion-icon>
+                    </div>
+                </div>
+                <div
+                    class="w-full mt-10 grid grid-flow-col grid-rows-3 auto-cols-[calc((100%/1))] overflow-hidden gap-5">
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-1.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-2.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-3.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-4.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-5.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+                    <div id="latest_product_item" class="flex w-full">
+                        <div class="h-[120px] relative overflow-hidden w-2/5">
+                            <img src="./img/featured/feature-6.jpg" class="h-full w-full" alt="">
+                        </div>
+                        <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
+                            <p>Crab Pool Security</p>
+                            <p class="font-extrabold">$30.00</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section  -->
+        <section class="mb-50">
+            <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
+                <h1 class="text-center font-extrabold text-4xl mb-4">From The Blog</h1>
+                <div class="w-25 h-1 bg-[#7fad39]"></div>
+            </div>
+            <div class="flex gap-8">
+                <div class="h-[420px] bg-gray-50 w-1/3 pb-3 duration-500 hover:shadow-2xl hover:scale-105 ">
+                    <div class="w-full h-8/12 overflow-hidden">
+                        <img src="./img/blog/blog-1.jpg" class="object-cover" alt="" srcset="">
+                    </div>
+                    <div class="w-full h-4/12 px-5 py-2 overflow-hidden">
+                        <div class="flex gap-5 items-center text-gray-400 mb-2">
+                            <div class="flex gap-2 items-center">
+                                <ion-icon name="calendar"></ion-icon>
+                                <p>May 4,2019 </p>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <ion-icon name="mail"></ion-icon>
+                                <p>5</p>
+                            </div>
+                        </div>
+                        <h1 class="font-bold text-lg mb-2">Cooking tips make cooking simple</h1>
+                        <p class="text-base h-12 overflow-hidden font-light leading-6">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quae earum totam facilis
+                            iste quas maiores, deleniti quibusdam, ab voluptas voluptates mollitia dolorum, nam atque
+                            ducimus molestiae! Placeat, recusandae iste?
+                        </p>
+                    </div>
+                </div>
+                <div class="h-[420px] bg-gray-50 w-1/3 pb-3 duration-500 hover:shadow-2xl hover:scale-105">
+                    <div class="w-full h-8/12 overflow-hidden">
+                        <img src="./img/blog/blog-2.jpg" class="object-cover" alt="" srcset="">
+                    </div>
+                    <div class="w-full h-4/12 px-5 py-2 overflow-hidden">
+                        <div class="flex gap-5 items-center text-gray-400 mb-2">
+                            <div class="flex gap-2 items-center">
+                                <ion-icon name="calendar"></ion-icon>
+                                <p>May 4,2019 </p>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <ion-icon name="mail"></ion-icon>
+                                <p>5</p>
+                            </div>
+                        </div>
+                        <h1 class="font-bold text-lg mb-2">Cooking tips make cooking simple</h1>
+                        <p class="text-base h-12 overflow-hidden font-light leading-6">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quae earum totam facilis
+                            iste quas maiores, deleniti quibusdam, ab voluptas voluptates mollitia dolorum, nam atque
+                            ducimus molestiae! Placeat, recusandae iste?
+                        </p>
+                    </div>
+                </div>
+                <div class="h-[420px] bg-gray-50 w-1/3 pb-3 duration-500 hover:shadow-2xl hover:scale-105">
+                    <div class="w-full h-8/12 overflow-hidden">
+                        <img src="./img/blog/blog-3.jpg" class="object-cover" alt="" srcset="">
+                    </div>
+                    <div class="w-full h-4/12 px-5 py-2 overflow-hidden">
+                        <div class="flex gap-5 items-center text-gray-400 mb-2">
+                            <div class="flex gap-2 items-center">
+                                <ion-icon name="calendar"></ion-icon>
+                                <p>May 4,2019 </p>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <ion-icon name="mail"></ion-icon>
+                                <p>5</p>
+                            </div>
+                        </div>
+                        <h1 class="font-bold text-lg mb-2">Cooking tips make cooking simple</h1>
+                        <p class="text-base h-12 overflow-hidden font-light leading-6">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quae earum totam facilis
+                            iste quas maiores, deleniti quibusdam, ab voluptas voluptates mollitia dolorum, nam atque
+                            ducimus molestiae! Placeat, recusandae iste?
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+    <!-- Footer Section  -->
+    <section class=" bg-gray-100 pt-20">
+        <div class="flex container px-20  mx-auto flex-col">
+            <div class="flex  pb-10">
+                <div class="w-1/3 gap-2 flex flex-col">
+                    <div class="h-18 w-30 overflow-hidden justify-center flex items-center">
+                        <img src="./img//logo.png" class="object-cover" alt="" srcset="">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-base">Address:</p>
+                        <p class="font-normal text-gray-600">60-49 Road 11378 New York</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-base">Phone:</p>
+                        <p class="font-normal text-gray-600">+65 11.188.888</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-base">Email:</p>
+                        <p class="font-normal text-gray-600">hello@colorlib.com</p>
+                    </div>
+                </div>
+                <div class="w-1/3 gap-2 flex flex-col">
+                    <h1 class="font-bold text-lg">Useful Links</h1>
+                    <ul class="flex flex-col gap-2">
+                        <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">About
+                                Us</a></li>
+                        <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">About
+                                Our Shop</a></li>
+                        <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">Secure
+                                Shopping</a></li>
+                        <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">Delivery infomation</a>
+                        </li>
+                        <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">Privacy Policy</a></li>
+                        <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">Our
+                                Sitemap</a></li>
+                    </ul>
+
+                </div>
+                <div class="w-1/3 flex flex-col gap-2">
+                    <h1 class="font-bold text-lg">Join Our Newsletter Now</h1>
+                    <div class="flex gap-8 flex-col">
+                        <p class="text-sm text-gray-500">Get E-mail updates about our latest shop and special offers.
+                        </p>
+                        <div class="w-full border-[1px] border-gray-300 bg-white h-12 justify-between flex">
+                            <input class="h-full w-8/12 ps-5" type="text" placeholder="Enter your mail">
+                            <button
+                                class="font-bold text-base uppercase w-4/12 px-3 text-white bg-[#7fad39] h-full ">Subscribe</button>
+                        </div>
+                        <ul class="flex gap-5 ">
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-facebook"></ion-icon></a>
+                            </li>
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-instagram"></ion-icon></a>
+                            </li>
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-twitter"></ion-icon></a>
+                            </li>
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-github"></ion-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between py-5 border-t-2 border-gray-400">
+                    <div class="flex items-center gap-1">
+                        <p class="font-semibold text-gray-500">Copyright ©2025 All rights reserved | This template is
+                            made with </p>
+                        <ion-icon class="text-lg text-gray-500" name="heart-sharp"></ion-icon>
+                        <p class="font-semibold text-gray-500">by</p>
+                        <a class="text-blue-600 font-semibold " href="">Colorlib</a>
+                    </div>
+                    <div>
+                        <img src="./img//payment-item.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="./javaScript.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
