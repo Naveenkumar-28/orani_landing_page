@@ -4,33 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZippyBites</title>
+    <title>Ogani</title>
     <link href="./src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="">
+<body id="body">
+    <!-- mobile Slider  -->
+    <div id="mobile_menu_items" class="absolute h-full w-full z-50 hidden">
+
+        <div class="w-8/12 h-full bg-white z-50 px-5 pt-2 duration-500 translate-x-[-100%]">
+            <div class="flex flex-col h-full justify-between pb-5">
+                <div>
+                    <div class="flex justify-between items-center ">
+                        <div class="h-15 w-25 overflow-hidden flex"><img class="h-full w-full object-contain"
+                                src="./img/logo.png" alt="" srcset="">
+                        </div>
+
+                        <div id="close_menu_icon" class="py-3 text-3xl flex justify-end px-2 cursor-pointer">
+                            <ion-icon name="close"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between ">
+                        <div id="language_container"
+                            class="flex py-3  items-center px-5 gap-2 cursor-pointer relative ">
+                            <div class="h-4 w-7 overflow-hidden flex justify-center items-center"><img
+                                    class="object-cover " id="flag" src="./img/americaFlag.png" alt="" srcset=""></div>
+                            <div id="language" class="font-normal ms-1 text-[14px]">English</div>
+                            <ion-icon class="text-[13px]" name="chevron-down-outline"></ion-icon>
+                            <div id="countryName_select_container"
+                                class="bg-gray-200 hidden duration-300 p-2 rounded-sm absolute bottom-[-100px] z-20 right-0 w-full justify-center flex-col items-center">
+                                <p
+                                    class="font-normal text-[14px] py-3 w-full text-center duration-500 rounded-sm selected">
+                                    English
+                                </p>
+                                <p class="font-normal text-[14px] py-3 w-full text-center duration-500 rounded-sm">
+                                    Tamil</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center px-5 cursor-pointer">
+                            <ion-icon name="person"></ion-icon>
+                            <p class="font-normal ms-1 text-[14px]">Login</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 items-center justify-center py-3 border-b-2 border-gray-200">
+                        <div class="relative">
+                            <ion-icon class="text-2xl cursor-pointer" name="heart"></ion-icon>
+                            <div
+                                class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                                5
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <ion-icon class="text-2xl ms-3 cursor-pointer" name="bag-handle"></ion-icon>
+                            <div
+                                class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                                5 </div>
+                        </div>
+
+                        <div class="flex ms-5">
+                            <p>item:</p>
+                            <p class="font-bold ms-2">₹350</p>
+                        </div>
+                    </div>
+                    <ul class="gap-2 flex flex-col mt-5 ">
+                        <li
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center  font-bold text-balance uppercase text-[#7fad39]">
+                            <a href="#">Home</a>
+                        </li>
+                        <li
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
+                            <a href="#">Shop</a>
+                        </li>
+                        <li
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
+                            <a href="#">Pages</a>
+                        </li>
+                        <li
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-2 items-center justify-center">
+                    <div class="flex items-center pe-5">
+                        <ion-icon name="mail"></ion-icon>
+                        <div class="font-normal ms-1 text-[14px]">hello@colorlib.com</div>
+                    </div>
+                    <div class="ps-5 font-normal text-[14px]">Free Shipping for all Order of ₹99</div>
+                </div>
+            </div>
+        </div>
+        <div id="black_shadow" class="bg-gray-700 absolute top-0 w-full h-full z-[-10] opacity-50">
+        </div>
+    </div>
 
     <!-- Header -->
-    <header class="h-12 w-full bg-gray-100">
-        <div class="flex justify-between items-center h-full container   mx-auto  px-20">
+    <header class="lg:h-12 w-full lg:bg-gray-100 flex">
+        <div
+            class="lg:flex hidden justify-between items-center h-full lg:container   mx-auto  lg:px-20 container md:px-20 px-10 2xl:px-52">
             <div class="flex items-center justify-center">
                 <div class="flex items-center pe-5">
                     <ion-icon name="mail"></ion-icon>
                     <div class="font-normal ms-1 text-[14px]">hello@colorlib.com</div>
                 </div>
                 <div class="h-6 bg-gray-300 w-[2px] rounded-full"></div>
-                <div class="ps-5 font-normal text-[14px]">Free Shipping for all Order of $99</div>
+                <div class="ps-5 font-normal text-[14px]">Free Shipping for all Order of ₹99</div>
             </div>
             <div class="flex items-center">
-                <div class="flex items-center px-5 gap-2 cursor-pointer relative">
-                    <div><img src="./img/language.png" alt="" srcset=""></div>
-                    <div class="font-normal ms-1 text-[14px]">English</div>
+                <div id="language_container" class="flex py-3  items-center px-5 gap-2 cursor-pointer relative ">
+                    <div class="h-4 w-7 overflow-hidden flex justify-center items-center"><img class="object-cover "
+                            id="flag" src="./img/americaFlag.png" alt="" srcset=""></div>
+                    <div id="language" class="font-normal ms-1 text-[14px]">English</div>
                     <ion-icon class="text-[13px]" name="chevron-down-outline"></ion-icon>
-                    <div
-                        class="bg-gray-200 p-2 rounded-sm absolute bottom-[-100px] z-20 right-0 w-full justify-center flex flex-col items-center">
-                        <p class="font-normal text-[14px] py-3">English</p>
-                        <p class="font-normal text-[14px] py-3">Tamil</p>
+                    <div id="countryName_select_container"
+                        class="bg-gray-200 hidden duration-300 p-2 rounded-sm absolute bottom-[-100px] z-20 right-0 w-full justify-center flex-col items-center">
+                        <p class="font-normal text-[14px] py-3 w-full text-center duration-500 rounded-sm selected">
+                            English
+                        </p>
+                        <p class="font-normal text-[14px] py-3 w-full text-center duration-500 rounded-sm">
+                            Tamil</p>
                     </div>
                 </div>
                 <div class="h-6 bg-gray-300 w-[2px] rounded-full"></div>
@@ -40,80 +139,95 @@
                 </div>
             </div>
         </div>
+
     </header>
-    <div class="container px-20 mx-auto">
+
+    <!-- Container  -->
+    <div class="container lg:px-20 mx-auto md:px-20 px-10 2xl:px-52">
         <!-- Menu Section  -->
-        <div class="h-20 flex justify-between items-center">
-            <div class="h-30 w-30 overflow-hidden"><img class="h-full w-full object-contain" src="./img/logo.png" alt=""
-                    srcset="">
-            </div>
-            <ul class="flex gap-10">
-                <li class="menu_btn font-bold text-balance uppercase text-[#7fad39]"><a href="#">Home</a>
-                </li>
-                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Shop</a></li>
-                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Pages</a></li>
-                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Blog</a></li>
-                <li class="menu_btn font-bold text-balance uppercase"><a href="#">Contact</a></li>
-            </ul>
-            <div class="flex gap-8 items-center">
-                <div class="relative">
-                    <ion-icon class="text-2xl" name="heart"></ion-icon>
-                    <div
-                        class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
-                        5
-                    </div>
-                </div>
-                <div class="relative">
-                    <ion-icon class="text-2xl ms-3" name="bag-handle"></ion-icon>
-                    <div
-                        class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
-                        5 </div>
+        <div class="lg:h-20 flex lg:flex-row flex-row items-center lg:py-0 py-5 gap-5">
+            <div class="lg:w-3/12 w-full h-full flex items-center justify-between">
+                <div class="lg:h-30 lg:w-30 overflow-hidden flex"><img class="h-full w-full object-contain"
+                        src="./img/logo.png" alt="" srcset="">
                 </div>
 
-                <div class="flex">
-                    <p>item:</p>
-                    <p class="font-bold ms-1">₹350</p>
+                <div class="lg:hidden cursor-pointer" id="menu_icon">
+                    <ion-icon class="font-extrabold text-4xl" name="menu"></ion-icon>
+                </div>
+
+            </div>
+            <div class="lg:flex justify-between lg:w-9/12 w-full items-center hidden">
+                <ul class="gap-8 flex ">
+                    <li class="menu_btn font-bold text-base uppercase text-[#7fad39]"><a href="#">Home</a>
+                    </li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Pages</a></li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Shop</a></li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Blog</a></li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Contact</a></li>
+                </ul>
+                <div class="lg:flex gap-4 h-full  items-center  lg:0 hidden">
+                    <div class="relative h-full">
+                        <ion-icon class="text-2xl" name="heart"></ion-icon>
+                        <div
+                            class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                            5
+                        </div>
+                    </div>
+                    <div class="relative h-full">
+                        <ion-icon class="text-2xl ms-3" name="bag-handle"></ion-icon>
+                        <div
+                            class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                            5 </div>
+                    </div>
+
+                    <div class="flex">
+                        <p>item:</p>
+                        <p class="font-bold ms-1">₹350</p>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Hero Section  -->
-        <main class="flex w-full gap-5">
-            <div class="w-3/12 h-full">
+        <main class="flex lg:flex-row w-full gap-5 flex-col">
+            <div class="lg:w-3/12 w-full h-full">
                 <div class="overflow-hidden h-full duration-700 ">
                     <div id="CategorieMenu"
-                        class="flex items-center justify-around bg-[#7fad39] hover:opacity-75 duration-500 cursor-pointer text-white font-bold text-lg px-5 h-12">
-                        <ion-icon class="text-2xl" name="menu"></ion-icon>
-                        <p>All departments</p>
+                        class="flex items-center justify-between bg-[#7fad39] hover:opacity-75 duration-500 cursor-pointer text-white font-bold text-lg lg:px-2 px-5 h-12">
+                        <div class="flex items-center gap-2">
+                            <ion-icon class="text-3xl" name="menu"></ion-icon>
+                            <p class="lg:text-base text-lg font-extrabold">All Departments</p>
+                        </div>
                         <ion-icon class="text-xl" name="chevron-down"></ion-icon>
                     </div>
                     <div id="CaterieItems" class=" duration-1000 max-h-0">
-                        <ul class="border-[1px] border-gray-300 py-3 ">
-                            <li class="px-6 py-2">Fresh Meat</li>
-                            <li class="px-6 py-2">Vegetables</li>
-                            <li class="px-6 py-2">Fruit & Nut Gifts</li>
-                            <li class="px-6 py-2">Fresh Berries</li>
-                            <li class="px-6 py-2">Ocean Foods</li>
-                            <li class="px-6 py-2">Butter & Eggs</li>
-                            <li class="px-6 py-2">Fastfood</li>
-                            <li class="px-6 py-2">Fresh Onion</li>
-                            <li class="px-6 py-2">Papayaya & Crisps</li>
-                            <li class="px-6 py-2">Oatmeal</li>
-                            <li class="px-6 py-2">Fresh Bananas</li>
+                        <ul class="border-[1px] border-gray-300 ">
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Meat</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Vegetables</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fruit & Nut Gifts</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Berries</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Ocean Foods</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Butter & Eggs</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fastfood</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Onion</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Papayaya & Crisps</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Oatmeal</li>
+                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Bananas</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="w-9/12">
-                <div class="flex h-12 justify-between ">
-                    <div class="flex items-center w-8/12 border-[1px] border-gray-300">
+            <div class="lg:w-9/12 w-full">
+                <div class="md:flex md:h-12 md:justify-between w-full">
+                    <div
+                        class="flex items-center lg:w-8/12 md:w-8/12 mt-2 lg:mt-0 w-full h-12 border-[1px] border-gray-300">
                         <input type="text" class="w-9/12 outline-0 h-full ps-5" placeholder="What do you need?">
                         <button
                             class="w-3/12 hover:opacity-75 duration-500 bg-[#7fad39] text-white font-bold text-balance uppercase h-full">Search</button>
                     </div>
-                    <div class="flex gap-5">
+                    <div class="flex gap-5 mt-5 lg:mt-0 items-center ">
                         <div
-                            class="h-12 w-12 rounded-full animate-bounce bg-gray-100  flex justify-center items-center">
+                            class="h-12 w-12 rounded-full lg:animate-bounce bg-gray-100  flex justify-center items-center">
                             <ion-icon id="phone_animation" class="text-[#7fad39]" name="call-sharp"></ion-icon>
                         </div>
                         <div class="justify-center items-center flex flex-col">
@@ -122,23 +236,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-[75vh] py-10 ">
+                <div class="lg:h-[70vh] xl:h-[75vh] py-10 md:h-[60vh] h-[50vh]">
                     <div class="bg-image  w-full h-full bg-gray-300">
-                        <div class="w-full ps-20 flex flex-col items-start justify-center h-full">
+                        <div class="w-full xl:ps-20 ps-10 flex flex-col items-start justify-center h-full">
                             <p class="text-[#7fad39] font-bold">FRUIT FRESH</p>
-                            <p class="font-extrabold text-5xl mt-3 mb-3">Vegetable</p>
-                            <p class="font-extrabold text-5xl mb-4"> 100% Organic</p>
-                            <p class="font-normal text-gray-500">Free Pickup and Delivery Available</p>
+                            <p class="font-extrabold lg:text-5xl text-3xl lg:mt-3 lg:mb-3 mb-1 mt-1">Vegetable</p>
+                            <p class="font-extrabold lg:text-5xl text-3xl lg:mb-4 mb-2"> 100% Organic</p>
+                            <p class="font-normal text-gray-500 mb-4">Free Pickup and Delivery Available</p>
                             <button
-                                class="bg-[#7fad39] duration-500 hover:opacity-75 text-white font-bold py-2 px-5 mt-10">Shop
+                                class="bg-[#7fad39] duration-500 hover:opacity-75 text-white font-bold py-2 px-5 lg:mt-3">Shop
                                 Now</button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        <section id="product_container" class="product_containe w-full mb-20 relative">
-            <div class="product_slider grid grid-flow-col auto-cols-[calc((100%/4))] auto-rows-[300px] "
+        <!-- Categorie Slider  -->
+        <section id="product_container" class="product_container  w-full mb-20 relative">
+            <div class="product_slider grid grid-flow-col xl:auto-cols-[calc((100%/4))] auto-rows-[300px] sm:auto-cols-[calc((100%/2))] lg:auto-cols-[calc((100%/3))] auto-cols-[calc((100%/1))] "
                 id="product_slider">
                 <div class="product_item ">
                     <div class="item-1 flex items-end justify-center py-4">
@@ -170,28 +285,30 @@
             <!-- Absolute positioned navigation -->
             <div
                 class="absolute z-30 left-0 top-0  w-full h-full flex justify-between items-center pointer-events-none">
-                <ion-icon id="next" name="caret-back-outline"
-                    class=" text-3xl absolute top-1/2 -translate-y-1/2 left-[-3%] bg-gray-200 p-2 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
-                <ion-icon id="prv" name="caret-forward-outline"
-                    class=" text-3xl absolute top-1/2 -translate-y-1/2 right-[-5%] bg-gray-200 p-2 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+                <ion-icon id="next" name="chevron-back-outline"
+                    class=" text-2xl absolute top-1/2 -translate-y-1/2  right-[100%]  bg-gray-200 px-1 py-4 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+                <ion-icon id="prv" name="chevron-forward-outline"
+                    class=" text-2xl absolute top-1/2 -translate-y-1/2 left-[100%] bg-gray-200 px-1 py-4 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
             </div>
         </section>
         <!-- Featured Product Section  -->
         <section>
             <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
-                <h1 class="text-center font-extrabold text-4xl">Featured Product</h1>
+                <h1 class="text-center font-extrabold lg:text-4xl text-3xl">Featured Product</h1>
                 <div class="w-25 h-1 bg-[#7fad39] mt-3"></div>
             </div>
             <div id="featured_product_list" class="flex justify-center gap-5 mb-10">
-                <p class="font-normal text-gray-500 text-lg cursor-pointer border-b-2 border-[#7fad39]">All</p>
-                <p class="font-normal text-gray-500 text-lg cursor-pointer">Oranges</p>
-                <p class="font-normal text-gray-500 text-lg cursor-pointer">Fresh Meat</p>
-                <p class="font-normal text-gray-500 text-lg cursor-pointer">Vegetables</p>
-                <p class="font-normal text-gray-500 text-lg cursor-pointer">Fastfood</p>
+                <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer border-b-2 border-[#7fad39]">All
+                </p>
+                <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer">Oranges</p>
+                <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer">Fresh Meat</p>
+                <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer">Vegetables</p>
+                <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer">Fastfood</p>
             </div>
-            <div class=" grid gap-x-7 gap-y-14 grid-cols-4 grid-rows-[repeat(2,350px)] mb-20  ">
+            <div
+                class=" grid gap-x-7 gap-y-14 xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[350px] mb-20  ">
 
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Oranges">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-1.jpg" class="h-full w-full" alt="">
                         <div
@@ -209,10 +326,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Fresh Meat">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-2.jpg" class="h-full w-full" alt="">
                         <div
@@ -230,10 +347,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Oranges">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-3.jpg" class="h-full w-full" alt="">
                         <div
@@ -251,10 +368,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Fresh Meat">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-4.jpg" class="h-full w-full" alt="">
                         <div
@@ -272,10 +389,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Vegetables">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-5.jpg" class="h-full w-full" alt="">
                         <div
@@ -293,10 +410,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Fastfood">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-6.jpg" class="h-full w-full" alt="">
                         <div
@@ -314,10 +431,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Vegetables">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-7.jpg" class="h-full w-full" alt="">
                         <div
@@ -335,10 +452,10 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
-                <div id="featured_product_item">
+                <div id="featured_product_item" class="duration-500" data-name="Fastfood">
                     <div class="h-9/12 relative overflow-hidden">
                         <img src="./img/featured/feature-8.jpg" class="h-full w-full" alt="">
                         <div
@@ -356,20 +473,20 @@
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
                         <p>Crab Pool Security</p>
-                        <p class="font-extrabold">$30.00</p>
+                        <p class="font-extrabold">₹30.00</p>
                     </div>
                 </div>
 
         </section>
         <!-- banner section  -->
-        <section id="banner_section" class="flex h-[250px] w-full gap-10 mb-20">
-            <div class="w-6/12 h-full"></div>
-            <div class="w-6/12 h-full"></div>
+        <section id="banner_section" class="flex lg:flex-row flex-col lg:h-[250px] w-full gap-10 lg:gap-10 mb-20">
+            <div class="lg:w-6/12 w-full lg:h-full h-[250px]"></div>
+            <div class="lg:w-6/12 w-full lg:h-full h-[250px]"></div>
         </section>
 
         <!-- latest & top rated & review product  -->
-        <section class="mb-20 flex gap-10">
-            <div class="w-4/12">
+        <section class="mb-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
+            <div class=" w-full">
                 <div class="flex justify-between items-center">
                     <h1 class="font-extrabold text-2xl">Latest Products</h1>
                     <div>
@@ -386,7 +503,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -395,7 +512,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -404,7 +521,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -413,7 +530,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -422,7 +539,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -431,15 +548,13 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
-
-
                 </div>
 
             </div>
-            <div class="w-4/12">
+            <div class="w-full">
                 <div class="flex justify-between items-center">
                     <h1 class="font-extrabold text-2xl">Top Rated Products</h1>
                     <div>
@@ -455,7 +570,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -464,7 +579,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -473,7 +588,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -482,7 +597,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -491,7 +606,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -500,14 +615,12 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-            <div class="w-4/12">
+            <div class="w-full">
                 <div class="flex justify-between items-center">
                     <h1 class="font-extrabold text-2xl">Review Products</h1>
                     <div>
@@ -523,7 +636,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -532,7 +645,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -541,7 +654,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -550,7 +663,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -559,7 +672,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
                     <div id="latest_product_item" class="flex w-full">
@@ -568,7 +681,7 @@
                         </div>
                         <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12">
                             <p>Crab Pool Security</p>
-                            <p class="font-extrabold">$30.00</p>
+                            <p class="font-extrabold">₹30.00</p>
                         </div>
                     </div>
 
@@ -578,15 +691,16 @@
         </section>
 
         <!-- Blog Section  -->
-        <section class="mb-50">
+        <section class="mb-20">
             <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
-                <h1 class="text-center font-extrabold text-4xl mb-4">From The Blog</h1>
+                <h1 class="text-center font-extrabold lg:text-4xl text-3xl mb-4">From The Blog</h1>
                 <div class="w-25 h-1 bg-[#7fad39]"></div>
             </div>
-            <div class="flex gap-8">
-                <div class="h-[420px] bg-gray-50 w-1/3 pb-3 duration-500 hover:shadow-2xl hover:scale-105 ">
+            <div class="grid gap-8 grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 place-items-center">
+                <div
+                    class="h-[420px] bg-gray-50 w-[350px] md:w-full pb-3 duration-500 hover:shadow-2xl hover:scale-105 ">
                     <div class="w-full h-8/12 overflow-hidden">
-                        <img src="./img/blog/blog-1.jpg" class="object-cover" alt="" srcset="">
+                        <img src="./img/blog/blog-1.jpg" class="w-full h-full object-cover" alt="" srcset="">
                     </div>
                     <div class="w-full h-4/12 px-5 py-2 overflow-hidden">
                         <div class="flex gap-5 items-center text-gray-400 mb-2">
@@ -607,9 +721,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="h-[420px] bg-gray-50 w-1/3 pb-3 duration-500 hover:shadow-2xl hover:scale-105">
+                <div
+                    class="h-[420px] bg-gray-50 w-[350px] md:w-full pb-3 duration-500 hover:shadow-2xl hover:scale-105 ">
                     <div class="w-full h-8/12 overflow-hidden">
-                        <img src="./img/blog/blog-2.jpg" class="object-cover" alt="" srcset="">
+                        <img src="./img/blog/blog-2.jpg" class="w-full h-full object-cover" alt="" srcset="">
                     </div>
                     <div class="w-full h-4/12 px-5 py-2 overflow-hidden">
                         <div class="flex gap-5 items-center text-gray-400 mb-2">
@@ -630,9 +745,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="h-[420px] bg-gray-50 w-1/3 pb-3 duration-500 hover:shadow-2xl hover:scale-105">
+                <div
+                    class="h-[420px] bg-gray-50 w-[350px] md:w-full pb-3 duration-500 hover:shadow-2xl hover:scale-105 ">
                     <div class="w-full h-8/12 overflow-hidden">
-                        <img src="./img/blog/blog-3.jpg" class="object-cover" alt="" srcset="">
+                        <img src="./img/blog/blog-3.jpg" class="w-full h-full object-cover" alt="" srcset="">
                     </div>
                     <div class="w-full h-4/12 px-5 py-2 overflow-hidden">
                         <div class="flex gap-5 items-center text-gray-400 mb-2">
@@ -653,6 +769,7 @@
                         </p>
                     </div>
                 </div>
+
 
             </div>
         </section>
@@ -660,9 +777,9 @@
     </div>
     <!-- Footer Section  -->
     <section class=" bg-gray-100 pt-20">
-        <div class="flex container px-20  mx-auto flex-col">
-            <div class="flex  pb-10">
-                <div class="w-1/3 gap-2 flex flex-col">
+        <div class="flex flex-col container lg:px-20 mx-auto md:px-20 px-10 2xl:px-52">
+            <div class="grid gap-10  pb-10 lg:grid-cols-2 xl:grid-cols-3">
+                <div class=" gap-2 flex flex-col">
                     <div class="h-18 w-30 overflow-hidden justify-center flex items-center">
                         <img src="./img//logo.png" class="object-cover" alt="" srcset="">
                     </div>
@@ -679,7 +796,7 @@
                         <p class="font-normal text-gray-600">hello@colorlib.com</p>
                     </div>
                 </div>
-                <div class="w-1/3 gap-2 flex flex-col">
+                <div class=" gap-2 flex flex-col">
                     <h1 class="font-bold text-lg">Useful Links</h1>
                     <ul class="flex flex-col gap-2">
                         <li class=" text-gray-500 hover:text-[#7fad39] duration-500"><a href="">About
@@ -696,7 +813,7 @@
                     </ul>
 
                 </div>
-                <div class="w-1/3 flex flex-col gap-2">
+                <div class=" flex flex-col gap-2">
                     <h1 class="font-bold text-lg">Join Our Newsletter Now</h1>
                     <div class="flex gap-8 flex-col">
                         <p class="text-sm text-gray-500">Get E-mail updates about our latest shop and special offers.
@@ -723,15 +840,16 @@
                 </div>
             </div>
             <div>
-                <div class="flex justify-between py-5 border-t-2 border-gray-400">
-                    <div class="flex items-center gap-1">
-                        <p class="font-semibold text-gray-500">Copyright ©2025 All rights reserved | This template is
-                            made with </p>
-                        <ion-icon class="text-lg text-gray-500" name="heart-sharp"></ion-icon>
-                        <p class="font-semibold text-gray-500">by</p>
-                        <a class="text-blue-600 font-semibold " href="">Colorlib</a>
+                <div
+                    class="flex gap-5 xl:flex-row xl:justify-between flex-col items-center w-full justify-center py-5 border-t-2 border-gray-400">
+                    <div class="flex flex-col lg:items-start items-center gap-1  lg:w-8/12 ">
+                        <p class="lg:font-semibold text-base text-gray-500 ">Copyright ©2025 All
+                            rights
+                            reserved | This
+                            template is
+                            made by <a class="text-blue-600 lg:font-semibold text-base " href="">Colorlib</a></p>
                     </div>
-                    <div>
+                    <div class="w-full justify-center items-center flex lg:justify-end lg:w-4/12">
                         <img src="./img//payment-item.png" alt="" srcset="">
                     </div>
                 </div>

@@ -9,7 +9,7 @@
 
 .product_item {
     display: flex;
-    justify-content: end;
+    justify-content: center;
 
 }
 
@@ -158,10 +158,13 @@
     }
 }
 
-#phone_animation {
-    animation: phone_animate 1s linear;
+.selected {
+    background-color: #fff;
 }
 
-@keyframes phone_animate {
-    0% {}
+#language_container:hover {
+    #countryName_select_container {
+        display: flex;
+    }
+
 }
