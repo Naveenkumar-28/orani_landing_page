@@ -11,9 +11,9 @@
 
 <body id="body">
     <!-- mobile Slider  -->
-    <div id="mobile_menu_items" class="absolute h-full w-full z-50 hidden">
+    <div id="mobile_menu_items" class="absolute h-full w-full z-50 hidden lg:hidden">
 
-        <div class="w-8/12 h-full bg-white z-50 px-5 pt-2 duration-500 translate-x-[-100%]">
+        <div class="w-8/12 sm:w-7/12 md:w-6/12 h-full bg-white z-50 px-5 pt-2 duration-500 translate-x-[-100%]">
             <div class="flex flex-col h-full justify-between pb-5">
                 <div>
                     <div class="flex justify-between items-center ">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="relative">
-                            <ion-icon class="text-2xl ms-3 cursor-pointer" name="bag-handle"></ion-icon>
+                            <ion-icon id="cart_icon" class="text-2xl ms-3 cursor-pointer" name="bag-handle"></ion-icon>
                             <div
                                 class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
                                 5 </div>
@@ -71,11 +71,11 @@
                     <ul class="gap-2 flex flex-col mt-5 ">
                         <li
                             class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center  font-bold text-balance uppercase text-[#7fad39]">
-                            <a href="#">Home</a>
+                            <a href="#Home">Home</a>
                         </li>
                         <li
                             class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
-                            <a href="#">Shop</a>
+                            <a href="#shop">Shop</a>
                         </li>
                         <li
                             class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
@@ -83,11 +83,11 @@
                         </li>
                         <li
                             class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
-                            <a href="#">Blog</a>
+                            <a href="#blog">Blog</a>
                         </li>
                         <li
                             class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
-                            <a href="#">Contact</a>
+                            <a href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -102,6 +102,34 @@
             </div>
         </div>
         <div id="black_shadow" class="bg-gray-700 absolute top-0 w-full h-full z-[-10] opacity-50">
+        </div>
+    </div>
+
+    <!-- Cart Slider  -->
+    <div class="absolute h-full w-full z-[99] justify-end hidden duration-500 overflow-hidden" id="cart_container">
+        <div class="w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 2xl:4/12 h-full translate-x-[100%] bg-white  duration-500">
+            <div class="px-10 flex justify-between pt-5 items-center pb-3 border-b-2 border-gray-300">
+                <h1 class="text-3xl font-extrabold ">Cart</h1>
+                <ion-icon id="cart_close_icon" class="text-4xl font-extrabold cursor-pointer"
+                    name="close-outline"></ion-icon>
+            </div>
+            <div id="cart_Item_Container" class="px-10 overflow-y-scroll overflow-x-hidden h-[80%] select-none">
+                <!-- List of Cart Items  -->
+                <div class="h-full w-full flex justify-center items-center">
+                    <div class="text-2xl ">Your Cart is empty</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between px-10 pt-3 border-t-2 border-gray-300">
+                <div class="flex gap-2">
+                    <p class="text-xl font-extrabold">Total :</p>
+                    <p id="total_price" class="text-lg text-gray-500 font-bold "> ₹ 0</p>
+                </div>
+                <button id="place_Order"
+                    class="bg-[#7fad39] hover:bg-[#9cbb6c] duration-500 text-xl text-white font-medium rounded-full px-8 cursor-pointer py-[8px]">Place
+                    Order</button>
+            </div>
+        </div>
+        <div id="cart_black_layer" class="bg-gray-700 cursor-pointer absolute top-0 w-full h-full z-[-10] opacity-50">
         </div>
     </div>
 
@@ -143,29 +171,32 @@
     </header>
 
     <!-- Container  -->
-    <div class="container lg:px-20 mx-auto md:px-20 px-10 2xl:px-52">
+    <div class="container lg:px-20 mx-auto md:px-20 px-10 2xl:px-52 relative select-none">
+        <!-- Scroll to top button  -->
+        <div id="up_arrow"
+            class="fixed z-40 bg-[#7fad39] text-white hover:bg-[#93c075] duration-500 shadow-xl cursor-pointer xl:right-5 2xl:right-15 xl:bottom-10 md:right-5 right-0 bottom-5 py-2 px-3 rounded-lg text-2xl">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+        </div>
         <!-- Menu Section  -->
         <div class="lg:h-20 flex lg:flex-row flex-row items-center lg:py-0 py-5 gap-5">
             <div class="lg:w-3/12 w-full h-full flex items-center justify-between">
                 <div class="lg:h-30 lg:w-30 overflow-hidden flex"><img class="h-full w-full object-contain"
                         src="./img/logo.png" alt="" srcset="">
                 </div>
-
                 <div class="lg:hidden cursor-pointer" id="menu_icon">
                     <ion-icon class="font-extrabold text-4xl" name="menu"></ion-icon>
                 </div>
-
             </div>
             <div class="lg:flex justify-between lg:w-9/12 w-full items-center hidden">
-                <ul class="gap-8 flex ">
-                    <li class="menu_btn font-bold text-base uppercase text-[#7fad39]"><a href="#">Home</a>
+                <ul class="gap-8 lg:gap-10 flex ">
+                    <li class="menu_btn font-bold text-base uppercase text-[#7fad39]"><a href="#home">Home</a>
                     </li>
                     <li class="menu_btn font-bold text-base uppercase"><a href="#">Pages</a></li>
-                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Shop</a></li>
-                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Blog</a></li>
-                    <li class="menu_btn font-bold text-base uppercase"><a href="#">Contact</a></li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#shop">Shop</a></li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#blog">Blog</a></li>
+                    <li class="menu_btn font-bold text-base uppercase"><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="lg:flex gap-4 h-full  items-center  lg:0 hidden">
+                <div class="lg:flex gap-4 h-full  items-center hidden">
                     <div class="relative h-full">
                         <ion-icon class="text-2xl" name="heart"></ion-icon>
                         <div
@@ -174,7 +205,7 @@
                         </div>
                     </div>
                     <div class="relative h-full">
-                        <ion-icon class="text-2xl ms-3" name="bag-handle"></ion-icon>
+                        <ion-icon id="cart_icon" class="text-2xl ms-3" name="bag-handle"></ion-icon>
                         <div
                             class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
                             5 </div>
@@ -188,7 +219,7 @@
             </div>
         </div>
         <!-- Hero Section  -->
-        <main class="flex lg:flex-row w-full gap-5 flex-col">
+        <main id="home" class="flex lg:flex-row w-full gap-5 flex-col">
             <div class="lg:w-3/12 w-full h-full">
                 <div class="overflow-hidden h-full duration-700 ">
                     <div id="CategorieMenu"
@@ -236,7 +267,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="lg:h-[70vh] xl:h-[75vh] py-10 md:h-[60vh] h-[50vh]">
+                <div class="lg:h-[460px] xl:h-[520px] py-10 md:h-[400px] h-[350px]">
                     <div class="bg-image  w-full h-full bg-gray-300">
                         <div class="w-full xl:ps-20 ps-10 flex flex-col items-start justify-center h-full">
                             <p class="text-[#7fad39] font-bold">FRUIT FRESH</p>
@@ -252,7 +283,7 @@
             </div>
         </main>
         <!-- Categorie Slider  -->
-        <section id="product_container" class="product_container  w-full mb-20 relative">
+        <section id="product_container" class="product_container  w-full relative mb-10">
             <div class="product_slider grid grid-flow-col xl:auto-cols-[calc((100%/4))] auto-rows-[300px] sm:auto-cols-[calc((100%/2))] lg:auto-cols-[calc((100%/3))] auto-cols-[calc((100%/1))] "
                 id="product_slider">
                 <div class="product_item ">
@@ -292,7 +323,7 @@
             </div>
         </section>
         <!-- Featured Product Section  -->
-        <section>
+        <section id="shop" class="pt-10">
             <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
                 <h1 class="text-center font-extrabold lg:text-4xl text-3xl">Featured Product</h1>
                 <div class="w-25 h-1 bg-[#7fad39] mt-3"></div>
@@ -305,178 +336,8 @@
                 <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer">Vegetables</p>
                 <p class="font-normal text-gray-500 lg:text-lg text-base cursor-pointer">Fastfood</p>
             </div>
-            <div
+            <div id="Featured_product_Container"
                 class=" grid gap-x-7 gap-y-14 xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[350px] mb-20  ">
-
-                <div id="featured_product_item" class="duration-500" data-name="Oranges">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-1.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Fresh Meat">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-2.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Oranges">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-3.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Fresh Meat">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-4.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Vegetables">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-5.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Fastfood">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-6.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Vegetables">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-7.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-                <div id="featured_product_item" class="duration-500" data-name="Fastfood">
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src="./img/featured/feature-8.jpg" class="h-full w-full" alt="">
-                        <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="heart"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="sync"></ion-icon>
-                            <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
-                                name="cart"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>Crab Pool Security</p>
-                        <p class="font-extrabold">₹30.00</p>
-                    </div>
-                </div>
-
         </section>
         <!-- banner section  -->
         <section id="banner_section" class="flex lg:flex-row flex-col lg:h-[250px] w-full gap-10 lg:gap-10 mb-20">
@@ -485,7 +346,7 @@
         </section>
 
         <!-- latest & top rated & review product  -->
-        <section class="mb-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
+        <section class="mb-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
             <div class=" w-full">
                 <div class="flex justify-between items-center">
                     <h1 class="font-extrabold text-2xl">Latest Products</h1>
@@ -691,7 +552,7 @@
         </section>
 
         <!-- Blog Section  -->
-        <section class="mb-20">
+        <section id="blog" class="mb-20 pt-10">
             <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
                 <h1 class="text-center font-extrabold lg:text-4xl text-3xl mb-4">From The Blog</h1>
                 <div class="w-25 h-1 bg-[#7fad39]"></div>
@@ -776,7 +637,7 @@
 
     </div>
     <!-- Footer Section  -->
-    <section class=" bg-gray-100 pt-20">
+    <section id="contact" class=" bg-gray-100 pt-20">
         <div class="flex flex-col container lg:px-20 mx-auto md:px-20 px-10 2xl:px-52">
             <div class="grid gap-10  pb-10 lg:grid-cols-2 xl:grid-cols-3">
                 <div class=" gap-2 flex flex-col">

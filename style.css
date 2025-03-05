@@ -13,6 +13,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* .product_slider.move {
     animation: product_move_first 1s linear forwards;
 
