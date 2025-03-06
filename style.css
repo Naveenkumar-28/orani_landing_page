@@ -1,5 +1,5 @@
 .bg-image {
-    background-image: url('./img/hero/banner.jpg');
+    background-image: url('./img/hero/bg_2.jpg');
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -90,72 +90,17 @@ html {
     overflow: hidden;
 }
 
-#featured_product_item div:nth-child(1):hover {
-    div {
-        transform: translateY(-100%)
-    }
-}
 
-.animate-rotate:hover {
-    rotate: 360deg;
-}
-
-
-.item-1 {
-    background-image: url('./img/categories/cat-1.jpg');
-    height: 100%;
-    width: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.item-2 {
-    background-image: url('./img/categories/cat-2.jpg');
-    height: 100%;
-    width: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.item-3 {
-    background-image: url('./img/categories/cat-3.jpg');
-    height: 100%;
-    width: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.item-4 {
-    background-image: url('./img/categories/cat-4.jpg');
-    height: 100%;
-    width: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.item-5 {
-    background-image: url('./img/categories/cat-5.jpg');
-    height: 100%;
-    width: 90%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#banner_section {
-    div:nth-child(1) {
-        background-image: url('./img//banner/banner-1.jpg');
+#banner_section>div {
+    &:nth-child(1) {
+        background-image: url('./img//banner/bg_3.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center
+        background-position: bottom
     }
 
-    div:nth-child(2) {
-        background-image: url('./img//banner/banner-2.jpg');
+    &:nth-child(2) {
+        background-image: url('./img//banner/bg_1.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center

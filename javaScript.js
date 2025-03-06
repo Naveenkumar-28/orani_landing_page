@@ -18,6 +18,32 @@ const CartTotalAmount = () => {
     document.getElementById('total_price').innerText = `₹ ${total}`
 }
 
+const CartCountDisplay = () => {
+    const countContainer = document.getElementById('cartCountContainer')
+    const cartcountDiv = document.getElementById('Cartcount')
+    console.log(cartcountDiv);
+
+    if (cartList.length > 0) {
+        if (!cartcountDiv) {
+            const countDiv = document.createElement('div')
+            countDiv.id = "Cartcount"
+            countDiv.className = "absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold"
+            countDiv.innerText = cartList.length
+            countContainer.appendChild(countDiv)
+        }
+        else {
+            cartcountDiv.innerText = cartList.length
+        }
+
+    }
+    else {
+        if (cartcountDiv) {
+            countContainer.removeChild(cartcountDiv)
+        }
+    }
+
+
+}
 const cartItemDisplay = () => {
 
     cartItemContainer.innerHTML = ""
@@ -26,15 +52,15 @@ const cartItemDisplay = () => {
         div.className = "py-5 flex gap-5 h-44"
         div.id = "cart_Item"
         div.innerHTML = ` <div class=" w-6/12 overflow-hidden">
-                            <img src=${item.ImageUrl} class="w-full h-full object-cover" alt="" srcset="">
+                            <img src=${item.ImageUrl} class="w-full h-full object-contain" alt="product_Img" srcset="">
                         </div>
                         <div class="w-6/12 flex flex-col gap-5">
                             <div class="flex justify-between items-center gap-3">
-                                <p class="font-bold capitalize  text-lg line-clamp-2 ">${item.name}</p>
+                                <p class="font-bold  text-lg line-clamp-2 font-mono uppercase">${item.name}</p>
                                 <ion-icon id="trash_icon" data-id=${item.id} class="text-xl cursor-pointer text-red-600"
                                     name="trash-outline"></ion-icon>
                             </div>
-                            <p class="text-lg font-bold">₹ ${item.price * item.quantity}</p>
+                            <p class="text-lg font-mono ">₹ ${item.price * item.quantity}</p>
                             <div class="flex items-center">
                                 <ion-icon id="remove" data-id=${item.id}
                                     class="bg-[#7fad39] cursor-pointer text-white p-1 rounded-sm text-xl font-extrabold"
@@ -49,6 +75,7 @@ const cartItemDisplay = () => {
         cartItemContainer.appendChild(div)
     })
     CartTotalAmount()
+    CartCountDisplay()
 }
 
 addEventListener('DOMContentLoaded', () => {
@@ -119,7 +146,7 @@ cartContainer.addEventListener('click', (e) => {
 
             cartList = []
             cartItemDisplay()
-            alert("Your order Successfully")
+            return alert("Your order Successfully")
         }
         alert('first select your product then place the order')
 
@@ -145,7 +172,6 @@ document.querySelectorAll('#cart_icon').forEach((cartIcon) => {
     })
 
 })
-
 
 
 
@@ -295,65 +321,65 @@ document.getElementById('up_arrow').addEventListener('click', () => {
 const featuredProduct = [
     {
         id: 1,
-        name: "Mutton Meat",
+        name: "Bell Pepper",
         price: 30,
-        ImageUrl: "./img/featured/feature-1.jpg",
+        ImageUrl: "./img/featured/product-1.jpg",
         categorieName: "Fresh Meat",
         quantity: 1
     },
     {
         id: 2,
-        name: "Bananna",
-        price: 30,
-        ImageUrl: "./img/featured/feature-2.jpg",
+        name: "Strawberry",
+        price: 50,
+        ImageUrl: "./img/featured/product-2.jpg",
         categorieName: "Vegetables",
         quantity: 1
     },
     {
         id: 3,
-        name: "Green Guava",
-        price: 30,
-        ImageUrl: "./img/featured/feature-3.jpg",
+        name: "Green Beans",
+        price: 20,
+        ImageUrl: "./img/featured/product-3.jpg",
         categorieName: "Oranges",
         quantity: 1
     },
     {
         id: 4,
-        name: "Watermolone",
-        price: 30,
-        ImageUrl: "./img/featured/feature-4.jpg",
+        name: "Purple Cabbage",
+        price: 70,
+        ImageUrl: "./img/featured/product-4.jpg",
         categorieName: "Oranges",
         quantity: 1
     },
     {
         id: 5,
-        name: "Grapes",
-        price: 30,
-        ImageUrl: "./img/featured/feature-5.jpg",
+        name: "Tomatoe",
+        price: 100,
+        ImageUrl: "./img/featured/product-5.jpg",
         categorieName: "Vegetables",
         quantity: 1
     },
     {
         id: 6,
-        name: "Burger",
-        price: 30,
-        ImageUrl: "./img/featured/feature-6.jpg",
+        name: "Brocolli",
+        price: 50,
+        ImageUrl: "./img/featured/product-6.jpg",
         categorieName: "Fastfood",
         quantity: 1
     },
     {
         id: 7,
-        name: "Mango",
-        price: 30,
-        ImageUrl: "./img/featured/feature-7.jpg",
+        name: "Carrots",
+        price: 120,
+        ImageUrl: "./img/featured/product-7.jpg",
         categorieName: "Oranges",
         quantity: 1
     },
     {
         id: 8,
-        name: "Apple",
-        price: 30,
-        ImageUrl: "./img/featured/feature-8.jpg",
+        name: "Fruit Juice",
+        price: 60,
+        ImageUrl: "./img/featured/product-8.jpg",
         categorieName: "Fastfood",
         quantity: 1
     },
@@ -365,27 +391,27 @@ featuredProduct.map((item) => {
     const div = document.createElement('div')
     div.accessKey = item.id
     div.id = "featured_product_item"
-    div.className = "duration-500"
+    div.className = "duration-500 border-[1px] border-gray-200 rounded-sm group"
     div.setAttribute("data-name", item.categorieName)
     div.innerHTML = `
-                    <div class="h-9/12 relative overflow-hidden">
-                        <img src=${item.ImageUrl} class="h-full w-full" alt="">
+                    <div class="h-9/12 relative overflow-hidden ">
+                        <img src=${item.ImageUrl} class="h-full w-full object-contain group-hover:scale-110 duration-500" alt="">
                         <div
-                            class="flex translate-y-[100%] duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
+                            class="flex translate-y-[100%] group-hover:translate-y-0 duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
                             <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                class="hover:bg-[#7fad39] hover:rotate-[360deg] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
                                 name="heart"></ion-icon>
                             <ion-icon
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                class="hover:bg-[#7fad39] hover:rotate-[360deg] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
                                 name="sync"></ion-icon>
                             <ion-icon 
-                                class="hover:bg-[#7fad39] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
+                                class="hover:bg-[#7fad39] hover:rotate-[360deg] animate-rotate duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full"
                                 name="cart" accessKey=${item.id}   id="add_Cart"></ion-icon>
                         </div>
                     </div>
                     <div class="flex justify-center items-center flex-col h-3/12">
-                        <p>${item.name}</p>
-                        <p class="font-extrabold">₹${item.price}.00</p>
+                        <p class="font-mono uppercase">${item.name}</p>
+                        <p class="font-medium text-[#7fad39]">₹${item.price}.00</p>
                     </div>`
     FeaturedproductContainer.appendChild(div)
 })
@@ -404,12 +430,93 @@ FeaturedproductContainer.addEventListener('click', (e) => {
             return alert('This item already in cart')
         }
         cartList.push(selectedItem)
+        CartCountDisplay()
         alert('Item added to cart')
 
     }
 }
 )
 
-// .addEventListener('click', (e) => {
-//     console.log('hi');
-// })
+
+//Latest Products display to frontend
+const latestProductsContainer = document.getElementById('latest_product_container')
+featuredProduct.map((item) => {
+    const div = document.createElement('div')
+    div.className = " relative group flex w-full border-[1px] border-gray-200 rounded-sm overflow-hidden"
+    div.id = "best_product_item"
+    div.innerHTML = `
+                    <div class="h-[120px] relative overflow-hidden w-2/5 ">
+                        <img src=${item.ImageUrl} class="h-full w-full object-contain" alt="">
+                    </div>
+                    <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12 font-mono ">
+                        <p class="uppercase">${item.name}</p>
+                        <p class="font-extrabold text-[#7fad39] py-2">₹${item.price}</p>
+                    </div>
+                    <ion-icon
+                        class="absolute opacity-0 cursor-pointer group-hover:opacity-100 duration-200 z-10 right-0 top-0 p-2 bg-[#7fad39] text-white rounded-bl-sm"
+                        name="cart" id="add_Cart" data-id=${item.id}></ion-icon>`
+
+    latestProductsContainer.appendChild(div)
+})
+
+//Top Rated Products display to frontend
+const topRatedProductsContainer = document.getElementById('Top_rated_products_container')
+featuredProduct.map((item) => {
+    const div = document.createElement('div')
+    div.className = " relative group flex w-full border-[1px] border-gray-200 rounded-sm overflow-hidden"
+    div.id = "best_product_item"
+    div.innerHTML = `
+                    <div class="h-[120px] relative overflow-hidden w-2/5 ">
+                        <img src=${item.ImageUrl} class="h-full w-full object-contain" alt="">
+                    </div>
+                    <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12 font-mono ">
+                        <p class="uppercase">${item.name}</p>
+                        <p class="font-extrabold text-[#7fad39] py-2">₹${item.price}</p>
+                    </div>
+                    <ion-icon
+                        class="absolute opacity-0 cursor-pointer group-hover:opacity-100 duration-200 z-10 right-0 top-0 p-2 bg-[#7fad39] text-white rounded-bl-sm"
+                        name="cart" id="add_Cart" data-id=${item.id}></ion-icon>`
+
+    topRatedProductsContainer.appendChild(div)
+})
+// Best Review Products display to frontend
+const bestReviewProductsContainer = document.getElementById('best_Review_Products_container')
+featuredProduct.map((item) => {
+    const div = document.createElement('div')
+    div.className = " relative group flex w-full border-[1px] border-gray-200 rounded-sm overflow-hidden"
+    div.id = "best_product_item"
+    div.innerHTML = `
+                    <div class="h-[120px] relative overflow-hidden w-2/5 ">
+                        <img src=${item.ImageUrl} class="h-full w-full object-contain" alt="">
+                    </div>
+                    <div class="flex justify-start py-5 items-start px-5 flex-col w-8/12 font-mono ">
+                        <p class="uppercase">${item.name}</p>
+                        <p class="font-extrabold text-[#7fad39] py-2">₹${item.price}</p>
+                    </div>
+                    <ion-icon
+                        class="absolute opacity-0 cursor-pointer group-hover:opacity-100 duration-200 z-10 right-0 top-0 p-2 bg-[#7fad39] text-white rounded-bl-sm"
+                        name="cart" id="add_Cart" data-id=${item.id}></ion-icon>`
+
+    bestReviewProductsContainer.appendChild(div)
+})
+
+document.querySelectorAll('#best_product_item').forEach((item) => {
+    item.addEventListener('click', (e) => {
+
+        if (e.target.id == "add_Cart") {
+            const id = e.target.dataset.id
+            const selectedItem = featuredProduct.find((item) => item.id == id)
+            if (!selectedItem) {
+                return
+            }
+            const existingItem = cartList.find((item) => item.id == selectedItem.id)
+            if (existingItem) {
+                return alert('This item already in cart')
+            }
+            cartList.push(selectedItem)
+            CartCountDisplay()
+            alert('Item added to cart')
+
+        }
+    })
+})
