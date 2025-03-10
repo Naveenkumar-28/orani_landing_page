@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="lg:h-10 w-full lg:bg-[#7fad39] hidden lg:block text-white">
+        <div
+            class="lg:flex justify-between items-center h-full lg:container   mx-auto  lg:px-20 container md:px-20 px-10 2xl:px-52">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center pe-5 text-sm">
+                    <ion-icon name="mail"></ion-icon>
+                    <div class=" ms-1 text-[12px]">hello@colorlib.com</div>
+                </div>
+                <div class="h-6 bg-gray-300 w-[2px] rounded-full"></div>
+                <div class="ps-5 font-normal text-[12px]">Free Shipping for all Order of ₹99</div>
+            </div>
+            <div class="flex items-center group">
+                <div id="language_container" class="flex py-3   items-center px-5 gap-2 cursor-pointer relative ">
+                    <div class="h-4 w-7 overflow-hidden flex justify-center items-center"><img class="object-cover "
+                            id="flag" src="./img/americaFlag.png" alt="" srcset=""></div>
+                    <div id="language" class="font-normal ms-1 text-[14px]">English</div>
+                    <ion-icon class="text-[13px]" name="chevron-down-outline"></ion-icon>
+                    <div id="countryName_select_container"
+                        class="bg-gray-200  hidden group-hover:flex z-[100] duration-300 p-2 rounded-sm absolute bottom-[-100px] right-0 w-full justify-center flex-col items-center">
+                        <p
+                            class="font-normal text-[14px] text-black py-3 w-full text-center duration-500 rounded-sm bg-white">
+                            English
+                        </p>
+                        <p class="font-normal text-[14px] text-black py-3 w-full text-center duration-500 rounded-sm">
+                            Tamil</p>
+                    </div>
+                </div>
+                <div class="h-6 bg-gray-300 w-[2px] rounded-full"></div>
+                <div class="flex items-center px-5 cursor-pointer">
+                    <ion-icon name="person"></ion-icon>
+                    <p class="font-normal ms-1 text-[14px]">Login</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <header id="header_menu" class=" select-none sticky top-0 z-[99] shadow-md  bg-white">
+        <!-- Menu Section  -->
+        <div
+            class="lg:h-[4.5rem] flex lg:flex-row flex-row items-center lg:py-0 py-5 gap-5 h-16  bg-white container lg:px-20 mx-auto md:px-20 sm:px-10 px-5 2xl:px-52">
+            <div class="lg:w-3/12 w-full h-full flex items-center justify-between">
+                <div class=" overflow-hidden flex uppercase text-3xl font-extrabold">
+                    <img class="h-full w-full object-contain" src="./img/logo.png" alt="" srcset="">
+
+                </div>
+                <div class="lg:hidden cursor-pointer" id="menu_icon">
+                    <ion-icon class="font-extrabold text-4xl" name="menu"></ion-icon>
+                </div>
+            </div>
+            <div class="lg:flex justify-between lg:w-9/12 w-full items-center hidden">
+                <ul class="gap-8 lg:gap-10 flex ">
+                    <li class="menu_btn font-bold text-base uppercase text-[#7fad39]"><a href="./index.html">Home</a>
+                    </li>
+                    <li class="menu_btn font-bold text-base uppercase "><a href="#">Pages</a></li>
+                    <li class="menu_btn font-bold text-base uppercase "><a href="#shop">Shop</a></li>
+                    <li class="menu_btn font-bold text-base uppercase "><a href="#blog">Blog</a></li>
+                    <li class="menu_btn font-bold text-base uppercase "><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="lg:flex gap-4 h-full  items-center hidden">
+                    <div class="relative h-full">
+                        <ion-icon class="text-2xl cursor-pointer" name="heart"></ion-icon>
+                        <div
+                            class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
+                            5
+                        </div>
+                    </div>
+                    <div class="relative h-full" id="cartCountContainer">
+                        <ion-icon id="cart_icon" class="text-2xl ms-3 cursor-pointer" name="bag-handle"></ion-icon>
+
+                    </div>
+
+                    <div class="flex">
+                        <p>item:</p>
+                        <p id="total_price" class="font-bold ms-1 text-[#7fad39]">₹0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Cart Section  -->
+    <section>
+        <div class="h-[400px] relative mb-20">
+            <img class="h-full w-full object-cover" src="./img/banner/bg_1.jpg" alt="img">
+            <div class="absolute top-0 left-0 h-full w-full bg-[rgba(0,0,0,0.11)] flex justify-center items-center">
+                <h1 class="font-extrabold text-white text-3xl uppercase">My Cart</h1>
+            </div>
+        </div>
+        <div class="container lg:px-20 mx-auto md:px-20 sm:px-10 px-5 2xl:px-52">
+            <div
+                class="bg-[#7fad39] flex lg:h-20 sm:h-16 h-14 text-white lg:text-lg sm:text-base text-[12px] font-semibold items-center justify-center">
+                <div class="lg:w-3/12 w-4/12 justify-center items-center flex"> </div>
+                <div class="lg:w-4/12 w-4/12 sm:justify-center sm:items-center flex">Product name</div>
+                <div class="lg:w-1/12 justify-center items-center lg:flex hidden">Price</div>
+                <div class="lg:w-2/12 w-2/12 justify-center items-center flex">Quantity</div>
+                <div class="lg:w-2/12 w-2/12 justify-center items-center flex  ">Total</div>
+            </div>
+            <div class="w-full mb-20" id="cart_Item_Container">
+            </div>
+            <div class="w-full grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 mb-40 gap-10">
+                <div class="flex flex-col">
+                    <div class="border border-gray-200 px-5 pt-5 pb-8 flex flex-col gap-5 mb-5">
+                        <h1 class="text-xl font-medium">Coupon Code</h1>
+                        <p class="text-gray-500">Enter your coupon code if you have one</p>
+                        <div>
+                            <p class="text-sm font-semibold mb-2">Coupon code</p>
+                            <input type="text" class="border outline-0 ps-5 border-gray-200 w-full h-14">
+                        </div>
+                    </div>
+                    <button
+                        class="bg-[#7fad39] border-2 border-transparent hover:border-[#7fad39] hover:text-[#7fad39] hover:bg-white duration-200 cursor-pointer text-white max-w-fit py-3 font-semibold  rounded-full px-5">Apply
+                        Coupon</button>
+                </div>
+                <div class="flex flex-col">
+                    <div class="border border-gray-200 px-5 pt-5 pb-8 flex flex-col gap-5 mb-5">
+                        <h5 class="text-xl font-medium">Estimate shipping and tax</h5>
+                        <p class="text-gray-500">Enter your destination to get a shipping estimate</p>
+                        <div class="mb-2">
+                            <h5 class="text-sm font-semibold mb-2">Country</h5>
+                            <input type="text" class="border outline-0 ps-5 border-gray-200 w-full h-14">
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="text-sm font-semibold mb-2">State/Province</h5>
+                            <input type="text" class="border outline-0 ps-5 border-gray-200 w-full h-14">
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="text-sm font-semibold mb-2">Zip/Postal Code</h5>
+                            <input type="text" class="border outline-0 ps-5 border-gray-200 w-full h-14">
+                        </div>
+                    </div>
+                    <button
+                        class="bg-[#7fad39] border-2 border-transparent hover:border-[#7fad39] hover:text-[#7fad39] hover:bg-white duration-200 cursor-pointer text-white max-w-fit py-3 font-semibold  rounded-full px-5">Estimate</button>
+                </div>
+                <div class="flex flex-col">
+                    <div class="border border-gray-200 px-5 pt-5 pb-8 flex flex-col gap-5 mb-5">
+
+                        <h5 class="text-xl font-medium">Cart Totals</h5>
+                        <div class="flex justify-between text-gray-600">
+                            <h5>Subtotal</h5>
+                            <p id="total_price">₹00.00</p>
+                        </div>
+                        <div class="flex justify-between text-gray-600">
+                            <h5>Delivery</h5>
+                            <p>₹50.00</p>
+                        </div>
+                        <div class="flex justify-between text-gray-600">
+                            <h5>Discount</h5>
+                            <p>-₹20.00</p>
+                        </div>
+                        <div class="flex justify-between font-bold border-t py-3 border-gray-200">
+                            <h5 class="uppercase">Total</h5>
+                            <p id="total">₹00.00</p>
+                        </div>
+                    </div>
+                    <button
+                        class="bg-[#7fad39] border-2 border-transparent hover:border-[#7fad39] hover:text-[#7fad39] hover:bg-white duration-200 cursor-pointer text-white max-w-fit py-3 font-semibold  rounded-full px-5">
+                        Proceed to checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section  -->
+    <section id="contact" class=" bg-gray-100 py-20 relative">
+        <!-- Scroll to top button  -->
+        <div id="up_arrow"
+            class="top-[-25px] rounded-full left-[50%] translate-x-[-50%] z-40 bg-[#7fad39] text-white hover:bg-[#93c075] duration-500 absolute shadow-2xl px-4 py-3 cursor-pointer text-2xl">
+            <ion-icon class="animate-bounce 2xl" name="chevron-up-outline"></ion-icon>
+        </div>
+        <!-- Footer  -->
+        <div class="flex flex-col container lg:px-20 mx-auto md:px-20 px-5 sm:px-10 2xl:px-52">
+            <div class="grid gap-10  pb-10 lg:grid-cols-2 xl:grid-cols-3">
+                <div class=" gap-2 flex flex-col">
+                    <div class="h-18 w-30 overflow-hidden justify-center flex items-center">
+                        <img src="./img//logo.png" class="object-cover" alt="" srcset="">
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-base">Address:</p>
+                        <p class="font-normal text-gray-600">60-49 Road 11378 New York</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-base">Phone:</p>
+                        <p class="font-normal text-gray-600">+65 11.188.888</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <p class="font-medium text-base">Email:</p>
+                        <p class="font-normal text-gray-600">hello@colorlib.com</p>
+                    </div>
+                </div>
+                <div class=" gap-2 flex flex-col">
+                    <h1 class="font-bold text-lg">Useful Links</h1>
+                    <ul class="flex flex-col gap-2">
+                        <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">About
+                                Us</a></li>
+                        <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">About
+                                Our Shop</a></li>
+                        <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">Secure
+                                Shopping</a></li>
+                        <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">Delivery infomation</a>
+                        </li>
+                        <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">Privacy Policy</a></li>
+                        <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">Our
+                                Sitemap</a></li>
+                    </ul>
+
+                </div>
+                <div class=" flex flex-col gap-2">
+                    <h1 class="font-bold text-lg">Join Our Newsletter Now</h1>
+                    <div class="flex gap-8 flex-col">
+                        <p class="text-base text-gray-500">Get E-mail updates about our latest shop and
+                            special offers.
+                        </p>
+                        <div class="w-full border-[1px] rounded-sm border-gray-300 bg-white h-12 justify-between flex">
+                            <input class="h-full w-8/12 ps-3 outline-0" type="text" placeholder="Enter your mail">
+                            <button
+                                class="font-bold text-sm uppercase w-4/12 px-3 text-white cursor-pointer bg-[#7fad39] h-full ">Subscribe</button>
+                        </div>
+                        <ul class="flex gap-5 ">
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-facebook"></ion-icon></a>
+                            </li>
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-instagram"></ion-icon></a>
+                            </li>
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-twitter"></ion-icon></a>
+                            </li>
+                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                                        name="logo-github"></ion-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center w-full justify-center">
+
+                    <p class="lg:font-semibold text-base text-gray-500  ">Copyright ©2025 All
+                        rights
+                        reserved | This
+                        template is
+                        made by <a class="text-blue-600 lg:font-semibold text-base " href="">Colorlib</a></p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="./cart.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

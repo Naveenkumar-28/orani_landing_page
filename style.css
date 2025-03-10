@@ -7,7 +7,7 @@
     background-position: center;
 }
 
-.product_item {
+.Categorie_item {
     display: flex;
     justify-content: center;
 
@@ -17,81 +17,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* .product_slider.move {
-    animation: product_move_first 1s linear forwards;
-
-} */
-
-.product_slider.move .product_item:nth-child(1) {
-    animation: reduce_width 1s linear forwards;
-}
-
-.product_slider.move .product_item:nth-child(2),
-.product_slider.move .product_item:nth-child(3),
-.product_slider.move .product_item:nth-child(4) {
-    animation: moving 1s linear forwards;
-
-}
-
-.product_slider.move .product_item:nth-child(5) {
-    animation: reduce_width-remove 1s linear forwards;
-}
-
-
-@keyframes product_move_first {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes moving {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes reduce_width {
-    from {
-        /* width: 250px; */
-        transform: translateX(0);
-    }
-
-    to {
-        /* width: 0; */
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes reduce_width-remove {
-    from {
-        /* width: 250px; */
-        transform: translateX(0);
-    }
-
-    to {
-        /* width: 0; */
-        transform: translateX(-100%);
-    }
-}
-
-
-.product_slider {
-    display: grid;
-    /* grid-auto-rows: 200px; */
-    /* grid-auto-columns: calc((100%/4)); */
-    overflow: hidden;
-}
-
 
 #banner_section>div {
+
     &:nth-child(1) {
         background-image: url('./img//banner/bg_3.jpg');
         background-repeat: no-repeat;
@@ -105,15 +33,18 @@ html {
         background-size: cover;
         background-position: center
     }
+
 }
 
-.selected {
-    background-color: #fff;
+#latest_product_Slider,
+#Top_rated_product_Slider,
+#best_Review_Product_Slider,
+#product_slider {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
-#language_container:hover {
-    #countryName_select_container {
-        display: flex;
-    }
-
+.best_product_item,
+.Categorie_item {
+    scroll-snap-align: start;
 }
