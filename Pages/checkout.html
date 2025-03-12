@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="font-[poppins]">
+
+
+    <!-- Checkout section  -->
+    <section class="mb-30">
+        <div class="h-[400px] relative mb-20">
+            <img class="h-full w-full object-cover" src="../img/banner/bg_1.jpg" alt="img">
+            <div class="absolute top-0 left-0 h-full w-full bg-[rgba(0,0,0,0.11)] flex justify-center items-center">
+                <h1 class="font-extrabold text-white text-3xl uppercase">CheckOut</h1>
+            </div>
+        </div>
+
+        <div class="container lg:px-20 mx-auto md:px-20 sm:px-5 px-5 2xl:px-52 ">
+            <div class="flex flex-col xl:flex-row gap-10">
+
+                <!-- Address section  -->
+                <div class="xl:flex-8/12 flex flex-col gap-8">
+                    <h5 class="text-2xl font-normal">Billing Details</h5>
+                    <form action="#" class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-5 lg:flex-row w-full">
+                            <div class="w-full">
+                                <label class="text-sm font-normal mb-10">First Name</label>
+                                <input type="text"
+                                    class="text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent border ps-5 border-gray-200 w-full h-14">
+                            </div>
+                            <div class="w-full">
+                                <label class="text-sm font-normal mb-10">Last Name</label>
+                                <input type="text"
+                                    class="text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent border ps-5 border-gray-200 w-full h-14">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-sm font-normal mb-10">State / Country</label>
+                            <input type="text"
+                                class="text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent border ps-5 border-gray-200 w-full h-14">
+                        </div>
+                        <div>
+                            <label class="text-sm font-normal mb-10">Street Address</label>
+                            <div class="flex flex-col lg:flex-row gap-5">
+
+                                <input type="text" placeholder="House number and street name"
+                                    class="border text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent ps-5 border-gray-200 w-full h-14">
+                                <input type="text" placeholder="Appartment, suite,unit etc :(optional)"
+                                    class="border text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent ps-5 border-gray-200 w-full h-14">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-5 lg:flex-row w-full">
+                            <div class="w-full">
+                                <label class="text-sm font-normal mb-10">Town / City</label>
+                                <input type="text"
+                                    class="border text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent ps-5 border-gray-200 w-full h-14">
+                            </div>
+                            <div class="w-full">
+                                <label class="text-sm font-normal mb-10">Postcode / ZIP *</label>
+                                <input type="text"
+                                    class="border text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent ps-5 border-gray-200 w-full h-14">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-5 lg:flex-row">
+                            <div class="w-full">
+                                <label class="text-sm font-normal mb-10">
+                                    Phone</label>
+                                <input type="number"
+                                    class="border appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent ps-5 border-gray-200 w-full h-14">
+                            </div>
+                            <div class="w-full">
+                                <label class="text-sm font-normal mb-10">Email Address</label>
+                                <input type="text"
+                                    class="border text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent ps-5 border-gray-200 w-full h-14">
+                            </div>
+                        </div>
+                        <div class="flex gap-5 text-sm">
+                            <div class="flex justify-center items-center gap-2 cursor-pointer">
+
+                                <input id="CreateAccount" checked name="select_address" type="radio">
+                                <label for="CreateAccount" class="text-gray-700">Create an
+                                    Account?</label>
+                            </div>
+                            <div class="flex justify-center items-center gap-2 cursor-pointer">
+                                <input id="select_address" name="select_address" type="radio">
+                                <label for="select_address" class="text-gray-700 cursor-pointer">Ship to different
+                                    address</label>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+                <!-- Cart Total & Payment  -->
+                <div class="xl:flex-4/12 flex flex-col gap-5">
+                    <!-- Cart Total  -->
+                    <div class="flex flex-col">
+                        <div class="border border-gray-200 px-5 pt-5 pb-8 flex flex-col gap-5 mb-5">
+
+                            <h5 class="text-xl font-normal">Cart Totals</h5>
+                            <div class="flex justify-between text-gray-600">
+                                <h5>Subtotal</h5>
+                                <p id="total_price">₹00.00</p>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <h5>Delivery</h5>
+                                <p>₹50.00</p>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <h5>Discount</h5>
+                                <p>-₹20.00</p>
+                            </div>
+                            <div class="flex justify-between font-medium border-t py-3 border-gray-200">
+                                <h5 class="uppercase">Total</h5>
+                                <p id="total">₹00.00</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Payment Method  -->
+                    <div class="border border-gray-200 px-5 pt-5 pb-8 flex flex-col gap-5 mb-5">
+                        <h5 class="text-2xl">Payment Method</h5>
+                        <div class="flex gap-5 flex-col px-5 text-base">
+                            <div class="flex justify-start items-center gap-2 cursor-pointer">
+
+                                <input id="CreditCard" checked name="select_payment" type="radio">
+                                <label for="CreditCard" class="text-gray-600 cursor-pointer">Credit Cart Payment</label>
+                            </div>
+                            <div class="flex justify-start items-center gap-2 cursor-pointer">
+                                <input id="DebitCard" name="select_payment" type="radio">
+                                <label for="DebitCard" class="text-gray-600  cursor-pointer">Debit Card
+                                    Payment</label>
+                            </div>
+                            <div class="flex justify-start items-center gap-2 cursor-pointer">
+                                <input id="upi" name="select_payment" type="radio">
+                                <label for="upi" class="text-gray-600 cursor-pointer">UPI</label>
+                            </div>
+                            <div class="flex justify-start gap-2 cursor-pointer">
+                                <div>
+                                    <input class="h-3.5 w-3.5" id="termsAndConditions" name="termsAndConditions"
+                                        type="checkbox">
+                                </div>
+                                <label for="termsAndConditions" class="text-gray-700  text-sm cursor-pointer">I have
+                                    read
+                                    and
+                                    accept
+                                    the <a href="#" class="text-[#7fad39]">terms and conditions</a> </label>
+                            </div>
+
+                        </div>
+                        <button
+                            class="bg-[#7fad39] focus:bg-blue-600 focus:border-blue-600 focus:text-white shadow-2xl border-2 border-transparent hover:border-[#7fad39] hover:text-[#7fad39] hover:bg-white duration-200 cursor-pointer text-white py-3 font-normal  rounded-full px-5">
+                            Place an order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section  -->
+    <script src="./checkout.js"></script>
+    <script src="./BasicFunctionality.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

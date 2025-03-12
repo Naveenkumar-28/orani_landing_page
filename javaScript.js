@@ -13,8 +13,8 @@ const topRatedProductSlider = document.getElementById('Top_rated_product_Slider'
 const bestReviewProductSlider = document.getElementById('best_Review_Product_Slider')
 
 
-
-let cartList = []
+let wishList = JSON.parse(localStorage.getItem('WishList')) || []
+let cartList = JSON.parse(localStorage.getItem('CartList')) || []
 
 addEventListener('scroll', () => {
     const headerMenu = document.getElementById('header_menu')
@@ -37,7 +37,7 @@ const CartTotalAmount = () => {
         return acc + (value.quantity * value.price)
     }, 0)
     document.querySelectorAll('#total_price').forEach((totalPriceDiv) => {
-        totalPriceDiv.innerText = `₹ ${total}`
+        totalPriceDiv.innerText = `₹${total}`
     })
 }
 
@@ -66,72 +66,52 @@ const CartCountDisplay = () => {
         }
     })
 }
-const cartItemDisplay = () => {
-    if (cartList.length > 0) {
-        cartItemContainer.innerHTML = ""
-        cartList.map((item) => {
-            const div = document.createElement('div')
-            div.className = "py-5 flex gap-5 h-44"
-            div.id = "cart_Item"
-            div.innerHTML = ` <div class=" w-6/12 overflow-hidden">
-                                <img src=${item.ImageUrl} class="w-full h-full object-contain" alt="product_Img" srcset="">
-                            </div>
-                            <div class="w-6/12 flex flex-col gap-5">
-                                <div class="flex justify-between items-center gap-3">
-                                    <p class="font-bold  text-lg line-clamp-2 font-mono uppercase">${item.name}</p>
-                                    <ion-icon id="trash_icon" data-id=${item.id} class="text-xl cursor-pointer text-red-600"
-                                        name="trash-outline"></ion-icon>
-                                </div>
-                                <p class="text-lg font-mono ">₹ ${item.price * item.quantity}</p>
-                                <div class="flex items-center">
-                                    <ion-icon id="remove" data-id=${item.id}
-                                        class="bg-[#7fad39] cursor-pointer text-white p-1 rounded-sm text-xl font-extrabold"
-                                        name="remove-outline"></ion-icon>
-                                    <p class="w-10 text-center text-lg">${item.quantity}</p>
-                                    <ion-icon  data-id=${item.id}
-                                        class="bg-[#7fad39] cursor-pointer text-white p-1 rounded-sm text-xl font-extrabold" id="add"
-                                        name="add-outline"></ion-icon>
-                                </div>
-                            </div>`
+// const cartItemDisplay = () => {
+//     if (cartList.length > 0) {
+//         cartItemContainer.innerHTML = ""
+//         cartList.map((item) => {
+//             const div = document.createElement('div')
+//             div.className = "py-5 flex gap-5 h-44"
+//             div.id = "cart_Item"
+//             div.innerHTML = ` <div class=" w-6/12 overflow-hidden">
+//                                 <img src=${item.ImageUrl} class="w-full h-full object-contain" alt="product_Img" srcset="">
+//                             </div>
+//                             <div class="w-6/12 flex flex-col gap-5">
+//                                 <div class="flex justify-between items-center gap-3">
+//                                     <p class="font-bold  text-lg line-clamp-2 font-mono uppercase">${item.name}</p>
+//                                     <ion-icon id="trash_icon" data-id=${item.id} class="text-xl cursor-pointer text-red-600"
+//                                         name="trash-outline"></ion-icon>
+//                                 </div>
+//                                 <p class="text-lg font-mono ">₹ ${item.price * item.quantity}</p>
+//                                 <div class="flex items-center">
+//                                     <ion-icon id="remove" data-id=${item.id}
+//                                         class="bg-[#7fad39] cursor-pointer text-white p-1 rounded-sm text-xl font-extrabold"
+//                                         name="remove-outline"></ion-icon>
+//                                     <p class="w-10 text-center text-lg">${item.quantity}</p>
+//                                     <ion-icon  data-id=${item.id}
+//                                         class="bg-[#7fad39] cursor-pointer text-white p-1 rounded-sm text-xl font-extrabold" id="add"
+//                                         name="add-outline"></ion-icon>
+//                                 </div>
+//                             </div>`
 
-            cartItemContainer.appendChild(div)
+//             cartItemContainer.appendChild(div)
 
-        })
-        CartTotalAmount()
-        CartCountDisplay()
-    } else {
-        cartItemContainer.innerHTML = ""
-        const div = document.createElement('div')
-        div.innerText = "Your Cart is empty"
-        div.className = "flex justify-center items-center h-full text-lg text-gray-400"
-        cartItemContainer.appendChild(div)
-    }
-}
+//         })
+
+//     } else {
+//         cartItemContainer.innerHTML = ""
+//         const div = document.createElement('div')
+//         div.innerText = "Your Cart is empty"
+//         div.className = "flex justify-center items-center h-full text-lg text-gray-400"
+//         cartItemContainer.appendChild(div)
+//     }
+// }
 
 addEventListener('DOMContentLoaded', () => {
-    cartItemDisplay()
+    CartTotalAmount()
+    CartCountDisplay()
 })
 
-
-
-document.querySelectorAll('#cart_icon').forEach((cartIcon) => {
-    cartIcon.addEventListener('click', () => {
-        BODY.classList.add('overflow-hidden')
-        cartContainer.classList.remove('hidden')
-        cartContainer.classList.add('flex')
-        cartItemDisplay()
-        setTimeout(() => {
-
-            cartContainer.children[0].classList.remove('translate-x-[100%]')
-            cartContainer.children[0].classList.add('translate-x-0')
-
-        }, 500)
-
-
-
-    })
-
-})
 
 
 
@@ -192,47 +172,6 @@ prv.addEventListener("click", () => {
     product_slider.scrollBy({ left: -CardsWidth, behavior: "smooth" });
     automaticSlidermoving()
 });
-
-
-// const featured_product_list = document.querySelectorAll('#featured_product_list p')
-// featured_product_list.forEach((item) => {
-//     item.addEventListener('click', () => {
-//         featured_product_list.forEach((item) => {
-//             item.classList.remove('border-b-2')
-//             item.classList.remove('border-[#7fad39]')
-//         })
-//         item.classList.add('border-b-2')
-//         item.classList.add('border-[#7fad39]')
-
-//         const featured_product_item = document.querySelectorAll('#featured_product_item')
-//         featured_product_item.forEach((product) => {
-//             product.classList.remove('hidden')
-//             product.classList.remove('scale-0')
-//             product.classList.remove('w-full')
-//             product.classList.remove('w-0')
-//         })
-//         if (!(item.innerText.toLowerCase() == "all")) {
-//             featured_product_item.forEach((product) => {
-//                 const select_name = item.innerText.toLowerCase()
-//                 if (!select_name.includes(product.dataset.name.toLowerCase())) {
-//                     product.classList.add('scale-0')
-//                     product.classList.add('w-0')
-//                     product.classList.remove('w-full')
-//                     setTimeout(() => {
-//                         product.classList.add('hidden')
-//                     }, 500)
-
-//                 } else {
-//                     product.classList.remove('scale-0')
-//                     product.classList.add('w-full')
-//                     product.classList.remove('w-0')
-
-//                 }
-
-//             })
-//         }
-//     })
-// })
 
 
 const menu_btn = document.querySelectorAll('.menu_btn')
@@ -346,7 +285,7 @@ const featuredProduct = [
         name: "Tomatoe",
         price: 100,
         ImageUrl: "./img/featured/product-5.jpg",
-        category: "Fruits",
+        category: "Vegetables",
         quantity: 1
     },
     {
@@ -375,10 +314,42 @@ const featuredProduct = [
     },
     {
         id: 9,
-        name: "Fruit Juice",
+        name: "Onion",
+        price: 100,
+        ImageUrl: "./img/featured/product-9.jpg",
+        category: "Vegetables",
+        quantity: 1
+    },
+    {
+        id: 10,
+        name: "Apple",
+        price: 80,
+        ImageUrl: "./img/featured/product-10.jpg",
+        category: "Fruits",
+        quantity: 1
+    },
+    {
+        id: 11,
+        name: "Garlic",
         price: 60,
-        ImageUrl: "./img/featured/product-8.jpg",
-        category: "Juice",
+        ImageUrl: "./img/featured/product-11.jpg",
+        category: "Vegetables",
+        quantity: 1
+    },
+    {
+        id: 12,
+        name: "Chilli",
+        price: 120,
+        ImageUrl: "./img/featured/product-12.jpg",
+        category: "Vegetables",
+        quantity: 1
+    },
+    {
+        id: 13,
+        name: "Orange",
+        price: 120,
+        ImageUrl: "./img/featured/product-13.jpg",
+        category: "Oranges",
         quantity: 1
     },
 ]
@@ -403,7 +374,7 @@ const displayProducts = (category) => {
             <div class="h-9/12 relative overflow-hidden">
                 <img src="${item.ImageUrl}" class="h-full w-full object-contain group-hover:scale-110 duration-500" alt="">
                 <div class="flex translate-y-[100%] group-hover:translate-y-0 duration-500 absolute bottom-0 left-0 justify-center pb-5 gap-5 items-end w-full h-[50%]">
-                    <ion-icon class="hover:bg-[#7fad39] hover:rotate-[360deg] cursor-pointer duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full" name="heart"></ion-icon>
+                    <ion-icon class="hover:bg-[#7fad39] hover:rotate-[360deg] cursor-pointer duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full" name="heart" accessKey="${item.id}" id="add_wishlist"></ion-icon>
                     <ion-icon class="hover:bg-[#7fad39] hover:rotate-[360deg] cursor-pointer duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full" name="sync"></ion-icon>
                     <ion-icon class="hover:bg-[#7fad39] hover:rotate-[360deg] cursor-pointer duration-500 hover:text-white text-xl bg-white border-[1px] border-gray-200 p-2 rounded-full" name="cart" accessKey="${item.id}" id="add_Cart"></ion-icon>
                 </div>
@@ -446,6 +417,7 @@ displayProducts("all");
 
 // Function to create product elements
 const createProductCard = (item) => {
+
     const div = document.createElement('div');
     div.className = "group overflow-hidden box-border px-1 best_product_item";
     div.innerHTML = `
@@ -466,9 +438,11 @@ const createProductCard = (item) => {
 
 // Function to populate a slider
 const populateSlider = (container, products) => {
-    products.forEach((item) => {
+    const sliceProductList = products.slice(0, 9)
+    sliceProductList.forEach((item) => {
         container.appendChild(createProductCard(item));
     });
+
 };
 
 // Populate each section
@@ -565,7 +539,7 @@ ReviewProductBtn.addEventListener('click', (e) => {
 
 
 
-document.querySelectorAll('#best_product_item').forEach((item) => {
+document.querySelectorAll('.best_product_item').forEach((item) => {
     item.addEventListener('click', (e) => {
 
         if (e.target.id == "add_Cart") {
@@ -588,8 +562,8 @@ document.querySelectorAll('#best_product_item').forEach((item) => {
     })
 })
 
-FeaturedproductContainer.addEventListener('click', (e) => {
 
+FeaturedproductContainer.addEventListener('click', (e) => {
     if (e.target.id == "add_Cart") {
         const id = e.target.accessKey
         const selectedItem = featuredProduct.find((item) => item.id == id)
@@ -606,6 +580,49 @@ FeaturedproductContainer.addEventListener('click', (e) => {
         CartTotalAmount()
         alert('Item added to cart')
 
+    } else if (e.target.id == "add_wishlist") {
+        const id = e.target.accessKey
+        const selectedItem = featuredProduct.find((item) => item.id == id)
+        if (!selectedItem) {
+            return
+        }
+        const existingItem = wishList.find((item) => item.id == selectedItem.id)
+        if (existingItem) {
+            return alert('This item already in Wishlist')
+        }
+        wishList.push(selectedItem)
+        localStorage.setItem('WishList', JSON.stringify(wishList))
+        wishListCountDisplay()
+        alert('Item added to Wishlist')
     }
 }
 )
+
+
+//WishList Count Display
+const wishListCountDisplay = () => {
+    const countContainer = document.querySelectorAll('#WishListCountContainer')
+
+    countContainer.forEach((WishListCountIcon) => {
+        let wishListCountDiv = WishListCountIcon.querySelector('#WishListCount');
+        if (wishList.length > 0) {
+            if (!wishListCountDiv) {
+                const countDiv = document.createElement('div')
+                countDiv.id = "WishListCount"
+                countDiv.className = "absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold"
+                countDiv.innerText = wishList.length
+                WishListCountIcon.appendChild(countDiv)
+            }
+            else {
+                wishListCountDiv.innerText = wishList.length
+            }
+        }
+        else {
+            if (wishListCountDiv) {
+                wishListCountDiv.remove();
+
+            }
+        }
+    })
+}
+wishListCountDisplay()

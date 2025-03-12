@@ -52,12 +52,9 @@
                         </div>
                     </div>
                     <div class="flex gap-2 items-center justify-center py-3 border-b-2 border-gray-200">
-                        <div class="relative">
+                        <div class="relative" id="WishListCountContainer">
                             <ion-icon class="text-2xl cursor-pointer" name="heart"></ion-icon>
-                            <div
-                                class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
-                                5
-                            </div>
+
                         </div>
                         <div class="relative h-full" id="cartCountContainer">
                             <ion-icon id="cart_icon" class="text-2xl ms-3 cursor-pointer" name="bag-handle"></ion-icon>
@@ -66,29 +63,41 @@
 
                         <div class="flex ms-5">
                             <p>item:</p>
-                            <p id="total_price" class="font-bold ms-2 text-[#7fad39]">₹0</p>
+                            <p id="total_price" class="font-semibold ms-2 text-[#7fad39]">₹0</p>
                         </div>
                     </div>
                     <ul class="gap-2 flex flex-col mt-5 ">
                         <li
-                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center  font-bold text-balance uppercase text-[#7fad39]">
-                            <a href="#Home">Home</a>
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center  font-medium text-balance uppercase text-[#7fad39]">
+                            <a href="#">Home</a>
                         </li>
                         <li
-                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
-                            <a href="#shop">Shop</a>
+                            class="menu_btn py-2 relative group hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
+                            <a href="./Pages/shop.html">Shop</a>
+                            <div class="absolute hidden  group-hover:block top-0 right-0">
+                                <ul
+                                    class=" flex  w-36 bg-white px-5 shadow-2xl py-3 font-light text-sm flex-col flex-nowrap gap-2 rounded-sm">
+                                    <li><a class="hover:text-[#7fad39]" href="./Pages/shop.html">Shop</a></li>
+                                    <li><a class="hover:text-[#7fad39]" href="./Pages/wishList.html">Wishlist</a></li>
+                                    <li><a class="hover:text-[#7fad39]" href="./Pages/singleProduct.html">Single
+                                            Product</a>
+                                    </li>
+                                    <li><a class="hover:text-[#7fad39]" href="./Pages/cart.html">Cart</a></li>
+                                    <li><a class="hover:text-[#7fad39]" href="./Pages/checkout.html">Checkout</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li
-                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
                             <a href="#">Pages</a>
                         </li>
                         <li
-                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
-                            <a href="#blog">Blog</a>
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
+                            <a href="./Pages/blog.html">Blog</a>
                         </li>
                         <li
-                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-bold text-balance uppercase">
-                            <a href="#contact">Contact</a>
+                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
+                            <a href="./Pages/contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -106,58 +115,8 @@
         </div>
     </div>
 
-    <!-- Cart Slider  -->
-    <div class="fixed h-full w-full z-[100] hidden justify-end duration-500 overflow-hidden" id="cart_container">
-        <div
-            class="w-full sm:w-8/12 md:w-8/12 lg:w-6/12 translate-x-[100%] xl:w-5/12 2xl:3/12 h-full bg-white  duration-500">
-            <div class="px-10 flex justify-between pt-5 items-center pb-3 shadow-md">
-                <h1 class="text-3xl font-bold  font-sans ">Cart</h1>
-                <ion-icon id="cart_close_icon" class="text-4xl font-extrabold hover:text-red-600 cursor-pointer"
-                    name="close-outline"></ion-icon>
-            </div>
-            <div id="cart_Item_Container" class="px-10 overflow-y-scroll overflow-x-hidden h-[80%] select-none">
-                <!-- List of Cart Items  -->
-            </div>
-            <div class="flex items-center justify-between px-10 pt-3 border-t-2 border-gray-300">
-                <div class="flex gap-2">
-                    <p class="text-lg font-bold">Total :</p>
-                    <p id="total_price" class="text-lg text-gray-500 font-bold font-mono "> ₹ 0</p>
-                </div>
-                <button id="place_Order"
-                    class="bg-[#7fad39] hover:bg-white hover:text-[#7fad39] border-2 border-transparent hover:border-[#9cbb6c]  duration-500 text-base uppercase  text-white font-medium rounded-full px-8 cursor-pointer py-[8px]">Place
-                    Order</button>
-            </div>
-        </div>
-        <div id="cart_black_layer" class="bg-gray-700 cursor-pointer absolute top-0 w-full h-full z-[-10] opacity-50">
-        </div>
-    </div>
-    <!-- Wishlist -->
-    <div class="fixed h-full w-full z-[100] hidden justify-end duration-500 overflow-hidden" id="cart_container">
-        <div class="w-full sm:w-8/12 md:w-8/12 lg:w-6/12 xl:w-5/12 2xl:3/12 h-full bg-white  duration-500">
-            <div class="px-10 flex justify-between pt-5 items-center pb-3 shadow-md">
-                <h1 class="text-3xl font-smibold  font-sans ">Wishlist</h1>
-                <ion-icon id="Wishlist_close_icon" class="text-4xl font-extrabold hover:text-red-600 cursor-pointer"
-                    name="close-outline"></ion-icon>
-            </div>
-            <div id="wishlistContainer" class="px-10 overflow-y-scroll overflow-x-hidden h-[80%] select-none">
-                <!-- List of Cart Items  -->
-            </div>
-            <div class="flex items-center justify-between px-10 pt-3 border-t-2 border-gray-300">
-                <div class="flex gap-2">
-
-                </div>
-                <button id="place_Order"
-                    class="bg-[#7fad39] hover:bg-white hover:text-[#7fad39] border-2 border-transparent hover:border-[#9cbb6c]  duration-500 text-base uppercase  text-white font-medium rounded-full px-8 cursor-pointer py-[8px]">Place
-                    Order</button>
-            </div>
-        </div>
-        <div id="wishlist_black_layer"
-            class="bg-gray-700 cursor-pointer absolute top-0 w-full h-full z-[-10] opacity-50">
-        </div>
-    </div>
-
     <!-- Header -->
-    <header class="lg:h-10 w-full lg:bg-gray-200 hidden lg:block ">
+    <header class="lg:h-10 w-full bg-[#7fad39] text-white  hidden lg:block ">
         <div
             class="lg:flex justify-between items-center h-full lg:container   mx-auto  lg:px-20 container md:px-20 px-10 2xl:px-52">
             <div class="flex items-center justify-center">
@@ -176,10 +135,11 @@
                     <ion-icon class="text-[13px]" name="chevron-down-outline"></ion-icon>
                     <div id="countryName_select_container"
                         class="bg-gray-200 hidden group-hover:flex duration-300 p-2 rounded-sm absolute bottom-[-100px] z-[100] right-0 w-full justify-center flex-col items-center">
-                        <p class="font-normal text-[14px] py-3 w-full text-center duration-500 rounded-sm bg-white">
+                        <p
+                            class="font-normal text-[14px] py-3 w-full text-center text-black duration-500 rounded-sm bg-white">
                             English
                         </p>
-                        <p class="font-normal text-[14px] py-3 w-full text-center duration-500 rounded-sm">
+                        <p class="font-normal text-[14px] py-3 w-full text-center text-black duration-500 rounded-sm">
                             Tamil</p>
                     </div>
                 </div>
@@ -195,7 +155,7 @@
     <header id="header_menu" class=" select-none sticky top-0 z-[99]   bg-white">
         <!-- Menu Section  -->
         <div
-            class="lg:h-[4.5rem] flex lg:flex-row flex-row items-center lg:py-0 py-5 gap-5 h-16  bg-white container lg:px-20 mx-auto md:px-20 sm:px-10 px-5 2xl:px-52">
+            class="lg:h-[4.5rem] flex lg:flex-row flex-row items-center lg:py-0 py-5 gap-5 h-16  bg-white container lg:px-20 mx-auto md:px-20 sm:px-5 px-5 2xl:px-52">
             <div class="lg:w-3/12 w-full h-full flex items-center justify-between">
                 <div class=" overflow-hidden flex uppercase text-3xl font-extrabold">
                     <img class="h-full w-full object-contain" src="./img/logo.png" alt="" srcset="">
@@ -207,20 +167,34 @@
             </div>
             <div class="lg:flex justify-between lg:w-9/12 w-full items-center hidden">
                 <ul class="gap-8 lg:gap-10 flex ">
-                    <li class="menu_btn font-bold text-base uppercase text-[#7fad39]"><a href="#home">Home</a>
+                    <li><a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase text-[#7fad39]"
+                            href="#">Home</a>
                     </li>
-                    <li class="menu_btn font-bold text-base uppercase "><a href="cart.html">Pages</a></li>
-                    <li class="menu_btn font-bold text-base uppercase "><a href="#shop">Shop</a></li>
-                    <li class="menu_btn font-bold text-base uppercase "><a href="#blog">Blog</a></li>
-                    <li class="menu_btn font-bold text-base uppercase "><a href="#contact">Contact</a></li>
+                    <li><a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase" href="#">Pages</a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#shop" class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase">Shop</a>
+                        <div class="absolute hidden  group-hover:block left-[-50%] top-[100%] pt-7">
+                            <ul
+                                class=" flex  w-36 bg-white px-5 shadow-2xl py-3 font-light text-sm flex-col flex-nowrap gap-2 rounded-sm">
+                                <li><a class="hover:text-[#7fad39]" href="./Pages/shop.html">Shop</a></li>
+                                <li><a class="hover:text-[#7fad39]" href="./Pages/wishList.html">Wishlist</a></li>
+                                <li><a class="hover:text-[#7fad39]" href="./Pages/singleProduct.html">Single Product</a>
+                                </li>
+                                <li><a class="hover:text-[#7fad39]" href="./Pages/cart.html">Cart</a></li>
+                                <li><a class="hover:text-[#7fad39]" href="./Pages/checkout.html">Checkout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase"
+                            href="./Pages/blog.html">Blog</a></li>
+                    <li><a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase"
+                            href="./Pages/contact.html">Contact</a></li>
                 </ul>
                 <div class="lg:flex gap-4 h-full  items-center hidden">
-                    <div class="relative h-full">
+                    <div class="relative h-full" id="WishListCountContainer">
                         <ion-icon class="text-2xl cursor-pointer" name="heart"></ion-icon>
-                        <div
-                            class="absolute top-[-5px] right-[-10px] bg-[#7fad39] rounded-full text-white h-3.5 w-3.5 text-[10px] text-center font-bold">
-                            5
-                        </div>
+
                     </div>
                     <div class="relative h-full" id="cartCountContainer">
                         <ion-icon id="cart_icon" class="text-2xl ms-3 cursor-pointer" name="bag-handle"></ion-icon>
@@ -229,7 +203,7 @@
 
                     <div class="flex">
                         <p>item:</p>
-                        <p id="total_price" class="font-bold ms-1 text-[#7fad39]">₹0</p>
+                        <p id="total_price" class="font-semibold ms-1 text-[#7fad39]">₹0</p>
                     </div>
                 </div>
             </div>
@@ -237,161 +211,188 @@
     </header>
 
     <!-- Container  -->
-    <div class="container lg:px-20 mx-auto md:px-20 2xl:px-52 relative select-none">
+    <div class="">
 
-
-        <!-- Hero Section  -->
-        <main id="home" class="flex lg:flex-row w-full gap-5 flex-col lg:mb-10">
-            <div class="lg:w-3/12 w-full h-full sm:px-0 px-5 lg:pt-0 pt-5">
-                <div class="overflow-hidden h-full duration-700 rounded-sm ">
-                    <div id="CategorieMenu"
-                        class="flex items-center justify-between bg-[#7fad39] hover:opacity-75 duration-500 cursor-pointer text-white font-bold text-lg lg:px-2 px-5 h-12">
-                        <div class="flex items-center gap-2">
-                            <ion-icon class="text-3xl" name="menu"></ion-icon>
-                            <p class="lg:text-base text-lg font-extrabold">All Departments</p>
-                        </div>
-                        <ion-icon class="text-xl" name="chevron-down"></ion-icon>
-                    </div>
-                    <div id="CaterieItems" class=" duration-1000  max-h-[500px]">
-                        <ul class="border-[1px] border-gray-300 flex flex-col xl:gap-1">
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Meat</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Vegetables</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fruit & Nut Gifts</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Berries</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Ocean Foods</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Butter & Eggs</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fastfood</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Onion</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Papayaya & Crisps</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Oatmeal</li>
-                            <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Bananas</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:w-9/12 w-full">
-                <div class="md:flex md:h-12 md:justify-between w-full sm:px-0 px-5">
-                    <div
-                        class="flex rounded-sm items-center lg:w-8/12 md:w-8/12 mt-2 lg:mt-0 w-full h-12 border-[1px] border-gray-300">
-                        <input type="text" class="w-9/12 outline-0 h-full ps-5" placeholder="What do you need?">
-                        <button
-                            class="w-3/12 hover:opacity-75 duration-500 bg-[#7fad39] text-white font-bold text-balance uppercase h-full">Search</button>
-                    </div>
-                    <div class="flex gap-5 mt-5 lg:mt-0 items-center ">
-                        <div class="h-12 w-12 rounded-full bg-gray-100  flex justify-center items-center">
-                            <ion-icon id="phone_animation" class="text-[#7fad39]" name="call-sharp"></ion-icon>
-                        </div>
-                        <div class="justify-center items-center flex flex-col">
-                            <p class="font-bold">+91 8489260109</p>
-                            <p class="font-light text-[14px]">support 24/7 time</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:h-[480px] xl:h-[520px] py-10 sm:h-[400px] h-[350px]">
-                    <div class="bg-image  w-full h-full bg-gray-300  rounded-sm">
-                        <div class="w-full bg-[#14131318]  flex flex-col items-center justify-center h-full">
-                            <p class="font-bold font-serif  lg:text-xl md:text-base text-white text-sm">FRUIT FRESH</p>
-                            <div class="flex justify-center items-center">
-                                <p
-                                    class=" xl:text-6xl font-semibold sm:text-5xl  text-3xl lg:mt-3 lg:mb-3 mb-1 mt-1 text-white">
-                                    Vegetable 100% Organic</p>
+        <section class=" mb-20 relative">
+            <main id="home" class=" lg:absolute top-0 left-0 z-50  w-full lg:py-5 pb-5">
+                <div
+                    class="container lg:px-20 md:px-20 2xl:px-52 flex lg:flex-row w-full gap-5 flex-col mx-auto sm:px-5">
+                    <div class="lg:w-3/12 w-full h-full sm:px-0 px-5 lg:pt-0 pt-5">
+                        <div class="overflow-hidden h-full duration-700 rounded-sm ">
+                            <div id="CategorieMenu"
+                                class="flex items-center justify-between bg-[#7fad39] duration-500 cursor-pointer text-white font-bold text-lg lg:px-2 px-5 h-12">
+                                <div class="flex items-center gap-2">
+                                    <ion-icon class="text-3xl" name="menu"></ion-icon>
+                                    <p class="lg:text-base text-lg font-extrabold">All Departments</p>
+                                </div>
+                                <ion-icon class="text-xl" name="chevron-down"></ion-icon>
                             </div>
-                            <p class="font-normal font-mono text-white mb-4 lg:font-bold text-sm">Free Pickup and
-                                Delivery
-                                Available</p>
-                            <button
-                                class="bg-[#7fad39] cursor-pointer border-2 border-transparent hover:border-[#7fad39] hover:bg-white hover:text-[#7fad39] rounded-full sm:text-base duration-500 text-white font-medium md:text-base lg:py-2 text-sm py-1 lg:px-5 px-3 font-sans lg:mt-3">Shop
-                                Now</button>
+                            <div id="CaterieItems" class=" duration-1000  max-h-0">
+                                <ul class="border-[1px] bg-white border-gray-300 flex flex-col xl:gap-1">
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Meat</li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Vegetables</li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fruit & Nut
+                                        Gifts
+                                    </li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Berries
+                                    </li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Ocean Foods</li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Butter & Eggs
+                                    </li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fastfood</li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Onion</li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Papayaya &
+                                        Crisps
+                                    </li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Oatmeal</li>
+                                    <li class="px-6 py-2 cursor-pointer hover:bg-gray-200 duration-500">Fresh Bananas
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-9/12 w-full">
+                        <div class="md:flex md:h-12 md:justify-between w-full sm:px-0 px-5">
+                            <div class="flex  items-center lg:w-8/12 md:w-8/12 mt-2 lg:mt-0 w-full h-12 ">
+                                <input type="text"
+                                    class="w-9/12 outline-0 h-full bg-white ps-5 border rounded-ss-sm rounded-es-sm border-gray-300"
+                                    placeholder="What do you need?">
+                                <button
+                                    class="w-3/12 duration-500 bg-[#7fad39] rounded-se-sm rounded-ee-sm text-white font-bold text-balance uppercase h-full">Search</button>
+                            </div>
+                            <div class="flex gap-5 mt-5 lg:mt-0 items-center ">
+                                <div class="h-12 w-12 rounded-full bg-gray-100  flex justify-center items-center">
+                                    <ion-icon id="phone_animation" class="text-[#7fad39]" name="call-sharp"></ion-icon>
+                                </div>
+                                <div class="justify-center items-center flex flex-col lg:text-white">
+                                    <p class="font-semibold">+91 8489260109</p>
+                                    <p class="font-light text-[14px]">support 24/7 time</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+            </main>
+            <div class=" lg:h-[520px] xl:h-[85vh] sm:h-[400px] h-[350px] ">
+
+                <div class="bg-image w-full h-full bg-gray-300 ">
+                    <div class="w-full bg-[#14131344]  flex flex-col items-center justify-center h-full">
+                        <p class="font-bold  lg:text-xl md:text-base text-white text-sm">FRUIT FRESH</p>
+                        <div class="flex justify-center items-center">
+                            <p
+                                class=" xl:text-6xl font-semibold sm:font-bold sm:text-5xl text-3xl lg:mt-3 lg:mb-3 mb-1 mt-1 text-white">
+                                Vegetable 100% Organic</p>
+                        </div>
+                        <p class="font-normal text-white mb-4 lg:font-bold text-sm">Free Pickup and
+                            Delivery
+                            Available</p>
+                        <button
+                            class="bg-[#7fad39] cursor-pointer border-2 border-transparent hover:border-[#7fad39] hover:bg-white hover:text-[#7fad39] rounded-full sm:text-base duration-500 text-white font-medium md:text-base lg:py-3 text-sm py-2 shadow-lg lg:px-5 px-3 lg:mt-3">Shop
+                            Now</button>
+                    </div>
+                </div>
             </div>
-        </main>
+            <!-- Hero Section  -->
+
+            <div class="lg:block hidden absolute w-full z-[0] top-0 left-0 h-22 bg-[rgba(0,0,0,0.31)]">
+            </div>
+        </section>
+
         <!-- Categorie Slider  -->
-        <section id="product_container" class="product_container  w-full relative mb-5">
-            <div class="product_slider grid overflow-hidden grid-flow-col xl:auto-cols-[calc((100%/4))] auto-rows-[300px] sm:auto-cols-[calc((100%/2))] lg:auto-cols-[calc((100%/3))] auto-cols-[calc((100%/1))] "
-                id="product_slider">
-                <div class="Categorie_item group">
-                    <div
-                        class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
-                        <img src="./img/categories/category-1.jpg"
-                            class="h-full group-hover:scale-110 duration-500 w-full object-cover" alt="categories_img">
+        <section id="product_container"
+            class="product_container mb-5 container lg:px-20 mx-auto md:px-20 2xl:px-52 sm:px-5 select-none">
+            <div class="relative">
+
+                <div class="product_slider grid overflow-hidden grid-flow-col xl:auto-cols-[calc((100%/4))] auto-rows-[300px] sm:auto-cols-[calc((100%/2))] lg:auto-cols-[calc((100%/3))] auto-cols-[calc((100%/1))] "
+                    id="product_slider">
+                    <div class="Categorie_item group">
                         <div
-                            class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
-                            <p
-                                class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
-                                Vegetables</p>
+                            class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
+                            <img src="./img/categories/category-1.jpg"
+                                class="h-full group-hover:scale-110 duration-500 w-full object-cover"
+                                alt="categories_img">
+                            <div
+                                class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
+                                <p
+                                    class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
+                                    Vegetables</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="Categorie_item group">
-                    <div
-                        class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
-                        <img src="./img/categories/category-2.jpg"
-                            class="h-full group-hover:scale-110 duration-500 w-full object-cover" alt="categories_img">
+                    <div class="Categorie_item group">
                         <div
-                            class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
-                            <p
-                                class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
-                                Fruits</p>
+                            class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
+                            <img src="./img/categories/category-2.jpg"
+                                class="h-full group-hover:scale-110 duration-500 w-full object-cover"
+                                alt="categories_img">
+                            <div
+                                class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
+                                <p
+                                    class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
+                                    Fruits</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="Categorie_item group">
-                    <div
-                        class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
-                        <img src="./img/categories/category-3.jpg"
-                            class="h-full group-hover:scale-110 duration-500 w-full object-cover" alt="categories_img">
+                    <div class="Categorie_item group">
                         <div
-                            class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
-                            <p
-                                class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
-                                Juices</p>
+                            class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
+                            <img src="./img/categories/category-3.jpg"
+                                class="h-full group-hover:scale-110 duration-500 w-full object-cover"
+                                alt="categories_img">
+                            <div
+                                class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
+                                <p
+                                    class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
+                                    Juices</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="Categorie_item group">
-                    <div
-                        class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
-                        <img src="./img/categories/category-4.jpg"
-                            class="h-full group-hover:scale-110 duration-500 w-full object-cover" alt="categories_img">
+                    <div class="Categorie_item group">
                         <div
-                            class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
-                            <p
-                                class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
-                                Dried</p>
+                            class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
+                            <img src="./img/categories/category-4.jpg"
+                                class="h-full group-hover:scale-110 duration-500 w-full object-cover"
+                                alt="categories_img">
+                            <div
+                                class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
+                                <p
+                                    class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
+                                    Dried</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="Categorie_item group">
-                    <div
-                        class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
-                        <img src="./img/categories/category-4.jpg"
-                            class="h-full group-hover:scale-110 duration-500 w-full object-cover" alt="categories_img">
+                    <div class="Categorie_item group">
                         <div
-                            class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
-                            <p
-                                class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
-                                Fresh Dried</p>
+                            class=" overflow-hidden relative flex items-end w-[90%] cursor-pointer rounded-sm justify-start">
+                            <img src="./img/categories/category-4.jpg"
+                                class="h-full group-hover:scale-110 duration-500 w-full object-cover"
+                                alt="categories_img">
+                            <div
+                                class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent flex items-end justify-start pb-5">
+                                <p
+                                    class="py-1 bg-[#7fad39] rounded-br-sm rounded-tr-sm text-white  w-5/6 uppercase font-serif text-xl text-center">
+                                    Fresh Dried</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-            </div>
+                </div>
 
-            <!-- Absolute positioned navigation -->
-            <div
-                class="absolute z-30 left-0 top-0  w-full h-full flex justify-between items-center pointer-events-none">
-                <ion-icon id="next" name="chevron-back-outline"
-                    class=" text-2xl absolute top-1/2 -translate-y-1/2  md:right-[100%] right-0 shadow-md  bg-gray-200 px-1 py-4 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
-                <ion-icon id="prv" name="chevron-forward-outline"
-                    class=" text-2xl absolute top-1/2 -translate-y-1/2 md:left-[100%] shadow-md bg-gray-200 px-1 py-4 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+                <!-- Absolute positioned navigation -->
+                <div
+                    class="absolute z-30 left-0 top-0  w-full h-full flex justify-between items-center pointer-events-none">
+                    <ion-icon id="next" name="chevron-back-outline"
+                        class=" text-2xl absolute top-1/2 -translate-y-1/2  md:right-[100%] right-0 shadow-md  bg-gray-200 px-1 py-4 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+                    <ion-icon id="prv" name="chevron-forward-outline"
+                        class=" text-2xl absolute top-1/2 -translate-y-1/2 md:left-[100%] shadow-md bg-gray-200 px-1 py-4 rounded-sm pointer-events-auto cursor-pointer"></ion-icon>
+                </div>
             </div>
         </section>
         <!-- Featured Product Section  -->
-        <section id="shop" class="pt-20 sm:px-0 px-5">
+        <section id="shop" class="pt-20 px-5 container lg:px-20 mx-auto md:px-20 2xl:px-52 relative select-none">
             <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
                 <h1 class="text-center font-extrabold lg:text-4xl text-3xl">Featured Product</h1>
                 <div class="w-25 h-1 bg-[#7fad39] mt-3"></div>
@@ -424,46 +425,53 @@
 
         <!-- banner section  -->
         <section id="banner_section"
-            class="grid grid-cols-1 sm:auto-rows-[250px] auto-rows-[220px] md:auto-rows-[350px] xl:auto-rows-[400px] w-full sm:gap-10 gap-5 mb-20">
-            <div class="w-full h-full sm:rounded-lg  overflow-hidden ">
-                <div
-                    class=" w-full h-full justify-end flex bg-gradient-to-l from-[#0e0e0eb2] via-[#0e0e0e2d] to-transparent">
+            class="grid grid-cols-1 sm:auto-rows-[300px] auto-rows-[250px] md:auto-rows-[450px] xl:auto-rows-[500px] w-full sm:gap-10 gap-5 mb-20">
+            <div class="w-full h-full  overflow-hidden ">
+                <div class=" w-full h-full justify-end flex">
                     <div
-                        class="xl:w-6/12 md:w-8/12 w-7/12 h-full flex flex-col sm:gap-3 xl:gap-5 gap-2 justify-center items-center">
-                        <p class="font-mono lg:text-4xl text-[0.8rem] font-extrabold text-lg sm:text-2xl text-white">
-                            Dried & Drink
-                            Fruits</p>
-                        <p class="lg:text-lg font-mono font-light text-sm sm:text-lg text-white">With 25% off</p>
-                        <button
-                            class="bg-[#7fad39] mt-2 cursor-pointer border-2 border-transparent hover:border-[#7fad39] hover:bg-white hover:text-[#7fad39] rounded-full duration-500 text-white font-medium md:text-base lg:py-2 text-sm py-1 lg:px-5 px-3 font-sans lg:mt-3">Shop
-                            Now</button>
+                        class="xl:w-6/12 md:w-8/12 w-10/12 h-full flex flex-col sm:gap-3 xl:gap-5 gap-2 justify-center items-end pe-10">
+                        <div class="flex flex-col justify-center items-center gap-2 lg:gap-3">
+                            <p class="lg:text-5xl font-extrabold text-[#7fad39] md:text-4xl sm:text-2xl text-xl ">
+                                Dried & Drink
+                                Fruits</p>
+
+                            <p class="lg:text-lg font-normal text-sm sm:text-base text-gray-400">With 25% off</p>
+                            <button
+                                class="bg-[#7fad39] mt-2 cursor-pointer border-2 border-transparent hover:border-[#7fad39] hover:bg-white hover:text-[#7fad39] rounded-full duration-500 text-white font-medium md:text-base lg:py-3 sm:py-2 text-[12px] py-1 lg:px-5 px-3 font-sans lg:mt-3">Shop
+                                Now</button>
+                        </div>
                     </div>
                 </div>
 
             </div>
-            <div class="w-full h-full sm:rounded-lg overflow-hidden ">
-                <div
-                    class="overflow-hidden w-full h-full justify-start flex bg-gradient-to-r from-[#0e0e0eb2] via-transparent to-transparent">
+            <div class="w-full h-full  overflow-hidden ">
+                <div class=" w-full h-full justify-start flex">
                     <div
-                        class="xl:w-6/12 md:w-8/12 w-7/12 h-full flex flex-col sm:gap-3 xl:gap-5 gap-2 justify-center items-center">
-                        <p class="font-mono lg:text-4xl font-extrabold text-lg sm:text-2xl text-white">Summar
-                            Fruits</p>
-                        <p class="lg:text-lg font-mono sm:text-lg text-[0.8rem]  text-white">100% Pure Natural Fruit
-                            Juice</p>
-                        <button
-                            class="bg-[#7fad39] mt-2 cursor-pointer border-2 border-transparent hover:border-[#7fad39] hover:bg-white hover:text-[#7fad39] rounded-full duration-500 text-white font-medium md:text-base lg:py-2 text-sm py-1 lg:px-5 px-3 font-sans lg:mt-3">Shop
-                            Now</button>
+                        class="xl:w-6/12 md:w-8/12 w-10/12 h-full flex flex-col sm:gap-3 xl:gap-5 gap-2 justify-center items-start ps-10">
+                        <div class="flex flex-col justify-center items-center gap-2 lg:gap-3">
+                            <p class="lg:text-5xl font-extrabold text-[#7fad39] md:text-4xl sm:text-2xl text-xl ">
+                                Summar
+                                Fruits</p>
+
+                            <p class="lg:text-lg font-normal text-sm sm:text-base text-gray-400">100% Pure Natural Fruit
+                                Juice</p>
+                            <button
+                                class="bg-[#7fad39] mt-2 cursor-pointer border-2 border-transparent hover:border-[#7fad39] hover:bg-white hover:text-[#7fad39] rounded-full duration-500 text-white font-medium md:text-base lg:py-3 sm:py-2 text-[12px] py-1 lg:px-5 px-3 font-sans lg:mt-3">Shop
+                                Now</button>
+                        </div>
                     </div>
                 </div>
 
             </div>
+
         </section>
 
         <!-- latest & top rated & review product  -->
-        <section class="mb-5 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 sm:px-0 px-5">
+        <section
+            class="container lg:px-20 mx-auto md:px-20 2xl:px-52 relative select-none mb-5 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 px-5">
             <div class=" w-full">
                 <div class="flex justify-between items-center">
-                    <h1 class="font-extrabold text-2xl">Latest Products</h1>
+                    <h1 class="font-medium text-2xl">Latest Products</h1>
                     <div id="latest_product_btn" class="flex gap-2">
                         <ion-icon id="back" class="bg-[#7fad39] text-white cursor-pointer text-lg rounded-sm px-2 py-2"
                             name="chevron-back"></ion-icon>
@@ -481,7 +489,7 @@
             </div>
             <div class="w-full">
                 <div class="flex justify-between items-center">
-                    <h1 class="font-extrabold text-2xl">Top Rated Products</h1>
+                    <h1 class="font-medium text-2xl">Top Rated Products</h1>
                     <div id="top_Rated_product_btn" class="flex gap-2">
                         <ion-icon id="back" class="bg-[#7fad39] text-white cursor-pointer text-lg rounded-sm px-2 py-2"
                             name="chevron-back"></ion-icon>
@@ -497,7 +505,7 @@
             </div>
             <div class="w-full">
                 <div class="flex justify-between items-center">
-                    <h1 class="font-extrabold text-2xl">Review Products</h1>
+                    <h1 class="font-medium text-2xl">Review Products</h1>
                     <div id="Review_product_btn" class="flex gap-2">
                         <ion-icon id="back" class="bg-[#7fad39] text-white cursor-pointer text-lg rounded-sm px-2 py-2"
                             name="chevron-back"></ion-icon>
@@ -514,7 +522,8 @@
         </section>
 
         <!-- Blog Section  -->
-        <section id="blog" class="mb-30 pt-20 ">
+        <section id="blog"
+            class=" container lg:px-20 mx-auto sm:px-5 md:px-20 2xl:px-52 relative select-none mb-30 pt-20 ">
             <div class="flex justify-center flex-col w-full items-center mb-10 mt-10">
                 <h1 class="text-center font-extrabold lg:text-4xl text-3xl mb-4">From The Blog</h1>
                 <div class="w-25 h-1 bg-[#7fad39]"></div>
@@ -537,8 +546,8 @@
                                 <p>5</p>
                             </div>
                         </div>
-                        <h1 class="font-bold text-lg mb-2">Cooking tips make cooking simple</h1>
-                        <p class="text-sm text-gray-500 line-clamp-2 font-serif overflow-hidden leading-6">
+                        <h1 class="font-medium text-base mb-2">Cooking tips make cooking simple</h1>
+                        <p class="text-sm text-gray-500 line-clamp-3">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quae earum totam facilis
                             iste quas maiores, deleniti quibusdam, ab voluptas voluptates mollitia dolorum, nam atque
                             ducimus molestiae! Placeat, recusandae iste?
@@ -561,8 +570,8 @@
                                 <p>5</p>
                             </div>
                         </div>
-                        <h1 class="font-bold text-lg mb-2">Cooking tips make cooking simple</h1>
-                        <p class="text-sm text-gray-500 line-clamp-2 font-serif overflow-hidden leading-6">
+                        <h1 class="font-medium text-base mb-2">Cooking tips make cooking simple</h1>
+                        <p class="text-sm text-gray-500 line-clamp-3">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quae earum totam facilis
                             iste quas maiores, deleniti quibusdam, ab voluptas voluptates mollitia dolorum, nam atque
                             ducimus molestiae! Placeat, recusandae iste?
@@ -585,8 +594,8 @@
                                 <p>5</p>
                             </div>
                         </div>
-                        <h1 class="font-bold text-lg mb-2">Cooking tips make cooking simple</h1>
-                        <p class="text-sm text-gray-500 line-clamp-2 font-serif overflow-hidden leading-6">
+                        <h1 class="font-medium mb-2">Cooking tips make cooking simple</h1>
+                        <p class="text-sm text-gray-500 line-clamp-3">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur quae earum totam facilis
                             iste quas maiores, deleniti quibusdam, ab voluptas voluptates mollitia dolorum, nam atque
                             ducimus molestiae! Placeat, recusandae iste?
@@ -600,14 +609,14 @@
 
     </div>
     <!-- Footer Section  -->
-    <section id="contact" class=" bg-gray-100 py-20 relative">
+    <section id="contact" class=" bg-neutral-100 py-20 relative">
         <!-- Scroll to top button  -->
         <div id="up_arrow"
             class="top-[-25px] rounded-full left-[50%] translate-x-[-50%] z-40 bg-[#7fad39] text-white hover:bg-[#93c075] duration-500 absolute shadow-2xl px-4 py-3 cursor-pointer text-2xl">
             <ion-icon class="animate-bounce 2xl" name="chevron-up-outline"></ion-icon>
         </div>
         <!-- Footer  -->
-        <div class="flex flex-col container lg:px-20 mx-auto md:px-20 px-5 sm:px-10 2xl:px-52">
+        <div class="flex flex-col container lg:px-20 mx-auto md:px-20 px-5 sm:px-5 2xl:px-52">
             <div class="grid gap-10  pb-10 lg:grid-cols-2 xl:grid-cols-3">
                 <div class=" gap-2 flex flex-col">
                     <div class="h-18 w-30 overflow-hidden justify-center flex items-center">
@@ -627,7 +636,7 @@
                     </div>
                 </div>
                 <div class=" gap-2 flex flex-col">
-                    <h1 class="font-bold text-lg">Useful Links</h1>
+                    <h1 class="font-medium text-lg">Useful Links</h1>
                     <ul class="flex flex-col gap-2">
                         <li class=" text-gray-500"><a class="hover:text-[#7fad39]" href="#">About
                                 Us</a></li>
@@ -644,27 +653,29 @@
 
                 </div>
                 <div class=" flex flex-col gap-2">
-                    <h1 class="font-bold text-lg">Join Our Newsletter Now</h1>
+                    <h1 class="font-medium text-lg">Join Our Newsletter Now</h1>
                     <div class="flex gap-8 flex-col">
                         <p class="text-base text-gray-500">Get E-mail updates about our latest shop and
                             special offers.
                         </p>
-                        <div class="w-full border-[1px] rounded-sm border-gray-300 bg-white h-12 justify-between flex">
-                            <input class="h-full w-8/12 ps-3 outline-0" type="text" placeholder="Enter your mail">
+                        <div class="w-full rounded-sm overflow-hidden  bg-white h-12 justify-between flex">
+                            <input
+                                class="h-full w-8/12 rounded-ss-sm rounded-es-sm ps-3 outline-0 border-gray-300 border"
+                                type="text" placeholder="Enter your mail">
                             <button
-                                class="font-bold text-sm uppercase w-4/12 px-3 text-white cursor-pointer bg-[#7fad39] h-full ">Subscribe</button>
+                                class="font-semibold text-sm uppercase w-4/12 duration-200 text-white cursor-pointer bg-[#7fad39] hover:bg-white hover:text-[#7fad39] border-2 border-[#7fad39] h-full ">Subscribe</button>
                         </div>
                         <ul class="flex gap-5 ">
-                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                            <li class="text-3xl duration-500 hover:scale-120"><a href="#"><ion-icon
                                         name="logo-facebook"></ion-icon></a>
                             </li>
-                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                            <li class="text-3xl duration-500 hover:scale-120"><a href="#"><ion-icon
                                         name="logo-instagram"></ion-icon></a>
                             </li>
-                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                            <li class="text-3xl duration-500 hover:scale-120"><a href="#"><ion-icon
                                         name="logo-twitter"></ion-icon></a>
                             </li>
-                            <li class="text-3xl duration-500 hover:scale-120"><a href=""><ion-icon
+                            <li class="text-3xl duration-500 hover:scale-120"><a href="#"><ion-icon
                                         name="logo-github"></ion-icon></a></li>
                         </ul>
                     </div>
@@ -673,11 +684,11 @@
             <div>
                 <div class="flex items-center w-full justify-center">
 
-                    <p class="lg:font-semibold text-base text-gray-500  ">Copyright ©2025 All
+                    <p class="font-normal text-base text-gray-500  ">Copyright ©2025 All
                         rights
                         reserved | This
                         template is
-                        made by <a class="text-blue-600 lg:font-semibold text-base " href="">Colorlib</a></p>
+                        made by <a class="text-[#7fad39] font-normal text-base " href="#">Colorlib</a></p>
 
                 </div>
             </div>
