@@ -5,12 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="../src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body class="font-[poppins]">
+    <!-- Image Section  -->
+    <section class="h-[400px] relative mb-30">
+        <img class="h-full w-full object-cover" src="../img/banner/bg_1.jpg" alt="img">
+        <div class="absolute top-0 left-0 h-full w-full bg-[rgba(0,0,0,0.11)] flex justify-center items-center">
+            <h1 class="font-extrabold text-white text-3xl uppercase">Contact Us</h1>
+        </div>
+    </section>
+    <section
+        class="grid flex-wrap gap-15 lg:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 container lg:px-20 mx-auto md:px-20 sm:px-5 px-5 2xl:px-52 mb-20">
+        <div class="flex flex-col items-center gap-3">
+            <ion-icon class="text-5xl text-green" name="call-outline"></ion-icon>
+            <h1 class="text-xl font-semibold">Phone</h1>
+            <p class="text-gray-500">+01-32566855485</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+            <ion-icon class="text-5xl text-green" name="compass-outline"></ion-icon>
+            <h1 class="text-xl font-semibold">Address</h1>
+            <p class="text-gray-500">6th,cross street,Puducherry</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+            <ion-icon class="text-5xl text-green" name="time-outline"></ion-icon>
+            <h1 class="text-xl font-semibold">Open Time</h1>
+            <p class="text-gray-500">10:00AM to 23:00 pm</p>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+            <ion-icon class="text-5xl text-green" name="mail-outline"></ion-icon>
+            <h1 class="text-xl font-semibold">Email</h1>
+            <p class="text-gray-500">naveenkumar@gamil.com</p>
+        </div>
+    </section>
+
+    <section
+        class="flex flex-col lg:flex-row container lg:gap-10 gap-20 lg:px-20 mx-auto md:px-20 sm:px-5 px-5 2xl:px-52 mb-30">
+        <iframe class="lg:w-6/12 w-full"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120740.26519494173!2d79.77227480911309!3d11.930066574620193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1741860230129!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="lg:w-6/12 w-full flex flex-col gap-5">
+            <div class="w-full">
+                <input type="text" placeholder="Your Name"
+                    class="text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent border px-5 border-gray-200 w-full h-14">
+            </div>
+            <div class="w-full">
+                <input type="text" placeholder="Your Email"
+                    class="text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent border px-5 border-gray-200 w-full h-14">
+            </div>
+            <div class="w-full">
+                <input type="text" placeholder="Subject"
+                    class="text-sm font-light text-gray-600 outline focus:outline-[#7fad39] outline-transparent border px-5 border-gray-200 w-full h-14">
+            </div>
+            <div class="w-full h-36">
+                <textarea type="text" placeholder="Message" class="text-sm font-light h-full py-5 resize-none text-gray-600 outline focus:outline-[#7fad39]
+                     outline-transparent border px-5 border-gray-200 w-full"></textarea>
+            </div>
+            <button
+                class="bg-[#7fad39] focus:bg-blue-600 focus:border-blue-600 focus:text-white shadow-2xl border-2 border-transparent hover:border-[#7fad39] hover:text-[#7fad39] hover:bg-white duration-200 cursor-pointer text-white py-3 font-normal  rounded-full px-5">
+                Send Message
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="./BasicFunctionality.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
 </body>

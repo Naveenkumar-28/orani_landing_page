@@ -21,10 +21,10 @@ addEventListener('scroll', () => {
     const offSetTop = headerMenu.offsetTop
 
     if (offSetTop > 40) {
-        headerMenu.classList.add('shadow-md')
+        headerMenu.classList.add('shadow-lg')
     }
     if (offSetTop == 40) {
-        headerMenu.classList.remove('shadow-md')
+        headerMenu.classList.remove('shadow-lg')
     }
 
 })
