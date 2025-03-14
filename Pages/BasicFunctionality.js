@@ -59,12 +59,17 @@ HeaderDiv.innerHTML = `
                             <a href="#">Home</a>
                         </li>
                         <li
-                            class="menu_btn py-2 relative group hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
+                            class="menu_btn py-2  hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
                             <a href="./Pages/shop.html">Shop</a>
-                            <div class="absolute hidden  group-hover:block top-0 right-0">
+                           
+                        </li>
+                        <li
+                            class="menu_btn py-2 relative group hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
+                            <a href="#">Pages</a>
+                             <div class="absolute hidden  group-hover:block top-0 right-0">
                                 <ul
                                     class=" flex  w-36 bg-white px-5 shadow-2xl py-3 font-light text-sm flex-col flex-nowrap gap-2 rounded-sm">
-                                    <li><a class="hover:text-[#7fad39]" href="./Pages/shop.html">Shop</a></li>
+                
                                     <li><a class="hover:text-[#7fad39]" href="./Pages/wishList.html">Wishlist</a></li>
                                     <li><a class="hover:text-[#7fad39]" href="./Pages/singleProduct.html">Single
                                             Product</a>
@@ -73,10 +78,6 @@ HeaderDiv.innerHTML = `
                                     <li><a class="hover:text-[#7fad39]" href="./Pages/checkout.html">Checkout</a></li>
                                 </ul>
                             </div>
-                        </li>
-                        <li
-                            class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
-                            <a href="#">Pages</a>
                         </li>
                         <li
                             class="menu_btn py-2 hover:bg-gray-100 rounded-sm flex justify-center items-center font-medium text-balance uppercase">
@@ -160,15 +161,18 @@ menuHeader.innerHTML = ` <!-- Menu Section  -->
                     <li><a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase text-[#7fad39]"
                             href="../index.html">Home</a>
                     </li>
-                    <li><a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase" href="#">Pages</a>
-                    </li>
-                    <li class="relative group">
+                  
+                    <li >
                         <a href="#shop"
                             class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase">Shop</a>
-                        <div class="absolute hidden  group-hover:block left-[-50%] top-[100%] pt-7">
+                       
+                    </li>
+                      <li class="relative group">
+                    <a class="menu_btn font-medium  hover:text-[#7fad39]  text-base uppercase" href="#">Pages</a>
+                     <div class="absolute hidden  group-hover:block left-[-50%] top-[100%] pt-7">
                             <ul
                                 class=" flex  w-36 bg-white px-5 shadow-2xl py-3 font-light text-sm flex-col flex-nowrap gap-2 rounded-sm">
-                                <li><a class="hover:text-[#7fad39]" href="./shop.html">Shop</a></li>
+            
                                 <li><a class="hover:text-[#7fad39]" href="./wishList.html">Wishlist</a></li>
                                 <li><a class="hover:text-[#7fad39]" href="./singleProduct.html">Single Product</a>
                                 </li>
@@ -325,12 +329,13 @@ document.getElementById('close_menu_icon').addEventListener('click', CloseMobile
 
 //Close Menu Black Shadow
 document.getElementById('black_shadow').addEventListener('click', CloseMobileMenu)
+
 //Scroll to top
 document.getElementById('up_arrow').addEventListener('click', () => {
     scrollTo({ top: 0, left: 0, behavior: "smooth" })
 })
 
-//cartItem display to frontend
+//Cart Total Amount display to frontend
 const CartTotalAmount = () => {
     const total = cartList.reduce((acc, value) => {
         return acc + (value.quantity * value.price)
@@ -339,10 +344,23 @@ const CartTotalAmount = () => {
         totalPriceDiv.innerText = `₹${total}.00`
     })
     if (CheckoutTotal) {
-        CheckoutTotal.innerHTML = `₹${(total - 20) + 50}.00`
+        const DeliveryDiv = document.getElementById('DeliveryCharges')
+        const DiscountDiv = document.getElementById('discount')
+        if (cartList.length > 0) {
+            const DeliveryCharges = total > 500 ? 0 : 80
+            const discount = total >= 1000 ? 100 : total >= 750 ? 80 : total >= 500 ? 50 : 0
+            DeliveryDiv.innerText = DeliveryCharges ? `₹${DeliveryCharges}.00` : "Free"
+            DiscountDiv.innerText = discount ? `-₹${discount}.00` : `₹0.00`
+            CheckoutTotal.innerHTML = `₹${(total - discount) + DeliveryCharges}.00`
+        }
+        else {
+            CheckoutTotal.innerHTML = `₹0.00`
+            DeliveryDiv.innerText = `₹0.00`
+            DiscountDiv.innerText = `₹0.00`
+        }
     }
 }
-
+//cartItem display to frontend
 const CartCountDisplay = () => {
     const countContainer = document.querySelectorAll('#cartCountContainer')
 

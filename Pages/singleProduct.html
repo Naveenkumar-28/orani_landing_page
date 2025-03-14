@@ -5,12 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Product</title>
-    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="../src/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body class="font-[poppins]">
+    <div class="h-[400px] relative mb-20">
+        <img class="h-full w-full object-cover" src="../img/banner/bg_1.jpg" alt="img">
+        <div class="absolute top-0 left-0 h-full w-full bg-[rgba(0,0,0,0.11)] flex justify-center items-center">
+            <h1 class="font-extrabold text-white text-3xl uppercase">Product Single</h1>
+        </div>
+    </div>
+    <!--Single Product  -->
+    <section class="container lg:px-20 mx-auto md:px-20 sm:px-5 px-5 2xl:px-52 mb-50" id="Single_product_container">
+
+
+    </section>
+    <!-- Related Products Section  -->
+    <section class="container lg:px-20 mx-auto md:px-20 sm:px-5 px-5 2xl:px-52 mb-50">
+        <div class="flex justify-center flex-col items-center gap-8">
+            <h6 class="text-green font-medium italic text-xl">Products</h6>
+            <h1 class="lg:text-4xl text-3xl font-semibold">Related Products</h1>
+            <p class="text-gray-500 text-base">Far far away, behind the word mountains, far from the
+                countries Vokalia and
+                Consonantia</p>
+        </div>
+
+        <div id="items_container"
+            class="grid pt-10 pb-5 select-none snap-x snap-mandatory gap-5 scroll grid-flow-col xl:auto-cols-[calc((100%/4))] lg:auto-cols-[calc((100%/3))] sm:auto-cols-[calc((100%/2))] auto-cols-[calc((100%/1))] overflow-x-auto ">
+        </div>
+
+    </section>
+    <script src="./BasicFunctionality.js"></script>
+    <script src="./singleProduct.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
 </body>
